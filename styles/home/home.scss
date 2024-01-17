@@ -1,0 +1,276 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+@import "../header/header.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Sen;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: $site-width;
+  min-height: $site-height;
+  @include flex-vertical();
+  justify-content: space-between;
+  .top {
+    margin: 0 auto;
+    width: $site-width;
+    height: auto;
+    @include flex-vertical();
+    justify-content: flex-start;
+    flex-grow: 1;
+    .header {
+      @include header();
+    }
+    // .header {
+    //   margin: 0 auto;
+    //   width: 100%;
+    //   height: $header-height;
+    //   @include flex-vertical();
+    //   background-color: $color-primary-dark;
+    //   &__block {
+    //     margin: 0 auto;
+    //     width: $block-width;
+    //     height: 70%;
+    //     @include flex-horizontal();
+    //     justify-content: space-between;
+    //     &__right {
+    //       margin: 0 auto;
+    //       width: 50%;
+    //       @include flex-vertical();
+    //       .logo-box {
+    //         margin: 0 auto;
+    //         width: 100%;
+    //         @include flex-horizontal();
+    //         justify-content: flex-start;
+    //         .logo {
+    //           margin: auto 0;
+    //           height: 70%;
+    //           width: auto;
+    //         }
+    //       }
+    //     }
+    //     &__left {
+    //       margin: 0 auto;
+    //       width: 50%;
+    //       @include flex-vertical();
+    //       &__box {
+    //         margin: 0 auto;
+    //         width: 100%;
+    //         height: 100%;
+    //         @include flex-horizontal();
+    //         justify-content: flex-end;
+    //         .menu-box {
+    //           margin: auto 0;
+    //           width: auto;
+    //           height: 100%;
+    //           @include flex-horizontal();
+    //           justify-content: flex-end;
+    //           .menu-item {
+    //             margin: auto 0;
+    //             margin-left: 20px;
+    //             @include text-font(16px, 300, 16px, 0%);
+    //             text-decoration: none;
+    //             color: $color-white;
+    //           }
+    //         }
+    //         .subscribe-box {
+    //           margin: auto 0;
+    //           margin-left: 20px;
+    //           width: auto;
+    //           height: 100%;
+    //           @include flex-horizontal();
+    //           .button {
+    //             margin: auto 0;
+    //             padding-left: 48px * 0.9;
+    //             padding-right: 48px * 0.9;
+    //             width: auto;
+    //             height: 100%;
+    //             @include text-font(18px, 400, 24px, 0%);
+    //             color: $color-primary-dark;
+    //             background-color: $color-white;
+    //             border: none;
+    //             outline: none;
+    //             cursor: pointer;
+    //           }
+    //           .button:hover {
+    //             background-color: $color-yellow;
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    main {
+      margin: 0 auto;
+      width: $site-width;
+      min-height: $slide-height;
+      @include flex-vertical();
+      justify-content: flex-start;
+      background-color: $color-white;
+    }
+  }
+  .footer {
+    margin: 0 auto;
+    width: $site-width;
+    height: $footer-height * 0.9;
+    @include flex-vertical();
+    background-color: $color-primary-dark;
+    &__top {
+      margin: 0 auto;
+      width: $block-width;
+      height: 27%;
+      @include flex-vertical();
+      &__block {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        @include flex-horizontal();
+        .logo-box {
+          margin: 0 auto;
+          width: 100%;
+          @include flex-horizontal();
+          justify-content: flex-start;
+          .logo {
+            margin: auto 0;
+            height: 20%;
+            width: auto;
+          }
+        }
+        .menu-box {
+          margin: auto 0;
+          width: auto;
+          height: 100%;
+          @include flex-horizontal();
+          justify-content: flex-end;
+          .menu-item {
+            margin: auto 0;
+            margin-left: 20px;
+            @include text-font(14px, 300, 14px, 0%);
+            text-decoration: none;
+            color: $color-white;
+          }
+          .menu-item:hover {
+            color: $color-yellow;
+          }
+        }
+      }
+    }
+    &__center {
+      margin: 0 auto;
+      width: $block-width;
+      height: 46%;
+      @include flex-vertical();
+      background-color: $color-primary;
+      &__block {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        @include flex-horizontal();
+        .footer-text-box {
+          margin: auto 0;
+          width: 50%;
+          height: 100%;
+          @include flex-horizontal();
+          justify-content: flex-start;
+          .footer-text {
+            margin: auto 0;
+            @include text-font(24px, 400, 28px, 0%);
+            text-decoration: none;
+            color: $color-white;
+          }
+        }
+        .footer-email-box {
+          margin: auto 0;
+          width: 50%;
+          height: 100%;
+          @include flex-horizontal();
+          justify-content: flex-end;
+          .input-email {
+            margin: auto 0;
+            width: 60%;
+            height: 20%;
+            @include text-font(18px, 400, 24px, 0%);
+            border: 1px solid $color-grey-middle;
+            background-color: $color-primary;
+            color: $color-white;
+            box-sizing: border-box;
+          }
+          .input-email::placeholder {
+            padding-left: 20px;
+            @include text-font(14px, 300, 14px, 0%);
+            color: $color-grey-middle;
+          }
+          .input-email:focus {
+            outline: none;
+          }
+          .button-email {
+            margin: auto 0;
+            margin-left: 20px;
+            padding-left: 48px * 0.8;
+            padding-right: 48px * 0.8;
+            width: auto;
+            height: 20%;
+            @include text-font(18px, 400, 24px, 0%);
+            color: $color-primary-dark;
+            background-color: $color-yellow;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+          .button-email:hover {
+            background-color: $color-yellow-dark;
+          }
+        }
+      }
+    }
+    &__bottom {
+      margin: 0 auto;
+      width: $block-width;
+      height: 27%;
+      @include flex-vertical();
+      &__block {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        @include flex-horizontal();
+        .copyright-box {
+          margin: auto 0;
+          width: 50%;
+          height: 100%;
+          @include flex-horizontal();
+          justify-content: flex-start;
+          .copyright {
+            margin: auto 0;
+            @include text-font(12px, 300, 12px, 0%);
+            text-decoration: none;
+            color: $color-grey-light;
+          }
+        }
+        .social-box {
+          margin: auto 0;
+          width: 50%;
+          height: 100%;
+          @include flex-horizontal();
+          justify-content: flex-end;
+          .social-item {
+            margin: auto 0;
+            margin-left: 20px;
+            @include text-font(14px, 300, 14px, 0%);
+            text-decoration: none;
+            color: $color-white;
+          }
+          .social-item:hover {
+            color: $color-yellow;
+          }
+        }
+      }
+    }
+  }
+}
