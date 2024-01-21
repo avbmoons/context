@@ -1,0 +1,149 @@
+@font-face {
+  font-family: Sen;
+  src: url(../../assets/fonts/Sen/Sen-VariableFont_wght.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Sen;
+}
+
+.post-box {
+  margin: 0 auto;
+  position: absolute;
+  top: auto;
+  left: 0;
+  z-index: 99;
+  margin: 0 auto;
+  margin-left: 5%;
+  width: 55%;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+.post-box .post-category {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  display: block;
+}
+.post-box .post-category .category-label {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: white;
+  text-transform: uppercase;
+}
+.post-box .post-category .category {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: white;
+  text-transform: uppercase;
+}
+.post-box .post-title {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+.post-box .post-title .title {
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: white;
+}
+.post-box .post-author {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+.post-box .post-author .author-label {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: white;
+}
+.post-box .post-author .author {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: #ffd050;
+}
+.post-box .post-author .split {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: white;
+}
+.post-box .post-author .date {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 14px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: white;
+}
+.post-box .post-resume {
+  margin-right: 10px;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+.post-box .post-resume .resume {
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 20px;
+  letter-spacing: 0%;
+  text-align: left;
+  color: white;
+}
+.post-box .post-button {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+.post-box .post-button .to-post {
+  padding: 16px 48px 16px 48px;
+  background-color: #ffd050;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #232536;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.post-box .post-button .to-post:hover {
+  background-color: #ffe18f;
+}/*# sourceMappingURL=postBox.css.map */

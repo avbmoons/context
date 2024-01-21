@@ -2,6 +2,8 @@
 
 @import "../vars/vars.scss";
 @import "../header/header.scss";
+@import "../footer/footer.scss";
+//@import "../postBox/postBox.scss";
 
 * {
   margin: 0;
@@ -27,250 +29,821 @@ body {
     flex-grow: 1;
     .header {
       @include header();
+      position: fixed;
+      top: 0;
+      //left: 0;
+      z-index: 999;
     }
-    // .header {
-    //   margin: 0 auto;
-    //   width: 100%;
-    //   height: $header-height;
-    //   @include flex-vertical();
-    //   background-color: $color-primary-dark;
-    //   &__block {
-    //     margin: 0 auto;
-    //     width: $block-width;
-    //     height: 70%;
-    //     @include flex-horizontal();
-    //     justify-content: space-between;
-    //     &__right {
-    //       margin: 0 auto;
-    //       width: 50%;
-    //       @include flex-vertical();
-    //       .logo-box {
-    //         margin: 0 auto;
-    //         width: 100%;
-    //         @include flex-horizontal();
-    //         justify-content: flex-start;
-    //         .logo {
-    //           margin: auto 0;
-    //           height: 70%;
-    //           width: auto;
-    //         }
-    //       }
-    //     }
-    //     &__left {
-    //       margin: 0 auto;
-    //       width: 50%;
-    //       @include flex-vertical();
-    //       &__box {
-    //         margin: 0 auto;
-    //         width: 100%;
-    //         height: 100%;
-    //         @include flex-horizontal();
-    //         justify-content: flex-end;
-    //         .menu-box {
-    //           margin: auto 0;
-    //           width: auto;
-    //           height: 100%;
-    //           @include flex-horizontal();
-    //           justify-content: flex-end;
-    //           .menu-item {
-    //             margin: auto 0;
-    //             margin-left: 20px;
-    //             @include text-font(16px, 300, 16px, 0%);
-    //             text-decoration: none;
-    //             color: $color-white;
-    //           }
-    //         }
-    //         .subscribe-box {
-    //           margin: auto 0;
-    //           margin-left: 20px;
-    //           width: auto;
-    //           height: 100%;
-    //           @include flex-horizontal();
-    //           .button {
-    //             margin: auto 0;
-    //             padding-left: 48px * 0.9;
-    //             padding-right: 48px * 0.9;
-    //             width: auto;
-    //             height: 100%;
-    //             @include text-font(18px, 400, 24px, 0%);
-    //             color: $color-primary-dark;
-    //             background-color: $color-white;
-    //             border: none;
-    //             outline: none;
-    //             cursor: pointer;
-    //           }
-    //           .button:hover {
-    //             background-color: $color-yellow;
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
     main {
       margin: 0 auto;
+      margin-top: $header-height;
       width: $site-width;
       min-height: $slide-height;
       @include flex-vertical();
       justify-content: flex-start;
       background-color: $color-white;
+      .hero {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $site-width;
+        height: $slide-height;
+        @include flex-vertical();
+        background-image: url("../../assets/slides/slide-1.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        &__block {
+          position: relative;
+          top: 0;
+          left: 0;
+          margin: 0 auto;
+          width: 100%;
+          height: $slide-height;
+          @include flex-vertical();
+          .post-box {
+            margin: 0 auto;
+            position: absolute;
+            top: auto; // 0;
+            left: 0;
+            z-index: 99;
+            margin: 0 auto;
+            margin-left: 5%;
+            width: 55%;
+            height: 55%;
+            @include flex-vertical();
+            justify-content: space-between;
+            //border: 1px solid red;
+            .post-category {
+              @include flex-horizontal();
+              justify-content: flex-start;
+              display: block;
+              .category-label {
+                @include text-font(14px, 200, 14px, 0%);
+                text-align: left;
+                color: $color-white;
+                text-transform: uppercase;
+              }
+              .category {
+                margin-left: 10px;
+                @include text-font(14px, 700, 14px, 0%);
+                text-align: left;
+                color: $color-white;
+                text-transform: uppercase;
+              }
+            }
+            .post-title {
+              width: 95%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              .title {
+                @include text-font(36px, 300, 36px, 0%);
+                text-decoration: none;
+                text-align: left;
+                color: $color-white;
+              }
+              .title:hover {
+                color: $color-yellow-light;
+              }
+            }
+            .post-author {
+              @include flex-horizontal();
+              justify-content: flex-start;
+              .author-label {
+                margin-right: 10px;
+                @include text-font(14px, 200, 14px, 0%);
+                text-align: left;
+                color: $color-white;
+              }
+              .author {
+                margin-right: 10px;
+                @include text-font(14px, 200, 14px, 0%);
+                text-align: left;
+                color: $color-yellow;
+              }
+              .split {
+                margin-right: 10px;
+                @include text-font(14px, 200, 14px, 0%);
+                text-align: left;
+                color: $color-white;
+              }
+              .date {
+                margin-right: 10px;
+                @include text-font(14px, 200, 14px, 0%);
+                text-align: left;
+                color: $color-white;
+              }
+            }
+            .post-resume {
+              margin-right: 10px;
+              width: 75%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              .resume {
+                @include text-font(14px, 200, 20px, 0%);
+                text-align: left;
+                color: $color-white;
+              }
+            }
+            .post-button {
+              @include flex-horizontal();
+              justify-content: flex-start;
+              .to-post {
+                padding: $button-padding;
+                background-color: $color-yellow;
+                @include text-font(16px, 500, 16px, 0%);
+                color: $color-primary-dark;
+                border: none;
+                outline: none;
+                cursor: pointer;
+              }
+              .to-post:hover {
+                background-color: $color-yellow-light;
+              }
+            }
+          }
+          .overlay {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: $slide-height; // 100%;
+            background-color: rgba($color: #000000, $alpha: 0.4);
+          }
+        }
+      }
+      .featured {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $block-width;
+        //height: $featured-height;
+        height: 90vh; // $slide-height;
+        @include flex-vertical();
+        //border: 1px solid red;
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%;
+          @include flex-horizontal();
+          justify-content: space-between;
+          .post-block {
+            margin: 0 auto;
+            width: 60%;
+            height: 100%;
+            @include flex-vertical();
+            //border: 1px solid green;
+            &__heading-box {
+              margin: 0 auto;
+              width: 100%;
+              height: 10%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              //border: 1px solid orange;
+              .heading-text {
+                margin: auto 0;
+                width: 100%;
+                @include text-font(24px, 500, 24px, 0%);
+                color: $color-primary-dark;
+              }
+            }
+            &__content-box {
+              margin: 0 auto;
+              width: 100%;
+              height: 90%;
+              @include flex-vertical();
+              justify-content: space-between;
+              //border: 2px solid violet;
+              .post-box {
+                margin: auto;
+                width: 90%;
+                height: 90%;
+                @include flex-vertical();
+                justify-content: space-between;
+                //border: 1px solid green;
+                .post-image {
+                  width: 100%;
+                  height: auto;
+                  img {
+                    width: inherit;
+                    height: auto;
+                  }
+                }
+                .post-category {
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  display: none;
+                  .category-label {
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-white;
+                    text-transform: uppercase;
+                  }
+                  .category {
+                    margin-left: 10px;
+                    @include text-font(14px, 700, 14px, 0%);
+                    text-align: left;
+                    color: $color-white;
+                    text-transform: uppercase;
+                  }
+                }
+                .post-title {
+                  width: 100%;
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  .title {
+                    @include text-font(20px, 500, 20px, 0%);
+                    text-decoration: none;
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                }
+                .post-author {
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  .author-label {
+                    margin-right: 10px;
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                  .author {
+                    margin-right: 10px;
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-yellow;
+                  }
+                  .split {
+                    margin-right: 10px;
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                  .date {
+                    margin-right: 10px;
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                }
+                .post-resume {
+                  margin-right: 10px;
+                  width: 90%;
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  .resume {
+                    @include text-font(14px, 200, 20px, 0%);
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                }
+                .post-button {
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  //width: 35%;
+                  .to-post {
+                    padding: $button-padding;
+                    background-color: $color-yellow;
+                    @include text-font(14px, 500, 14px, 0%);
+                    color: $color-primary-dark;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                  }
+                  .to-post:hover {
+                    background-color: $color-yellow-dark;
+                  }
+                }
+              }
+            }
+          }
+          .all-posts-block {
+            margin: 0 auto;
+            width: 40%;
+            height: 100%;
+            @include flex-vertical();
+            //border: 1px solid green;
+            &__heading-box {
+              margin: 0 auto;
+              width: 100%;
+              height: 10%;
+              @include flex-horizontal();
+              justify-content: space-between;
+              //border: 1px solid orange;
+              .heading-text {
+                margin: auto 0;
+                //width: 100%;
+                @include text-font(24px, 500, 24px, 0%);
+                color: $color-primary-dark;
+              }
+              .heading-link {
+                margin: auto 0;
+                //width: 100%;
+                @include text-font(16px, 500, 16px, 0%);
+                text-decoration: none;
+                color: $color-primary-dark;
+              }
+            }
+            &__content-box {
+              margin: 0 auto;
+              width: 100%;
+              height: 90%;
+              @include flex-vertical();
+              justify-content: flex-start; // space-between;
+              //border: 2px solid violet;
+              .post-box {
+                margin: auto;
+                width: 90%;
+                height: 25%; // 90%;
+                @include flex-vertical();
+                justify-content: space-around;
+                //border: 1px solid green;
+                .post-image {
+                  width: 100%;
+                  height: auto;
+                  display: none;
+                  img {
+                    width: inherit;
+                    height: auto;
+                  }
+                }
+                .post-category {
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  display: none;
+                  .category-label {
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-white;
+                    text-transform: uppercase;
+                  }
+                  .category {
+                    margin-left: 10px;
+                    @include text-font(14px, 700, 14px, 0%);
+                    text-align: left;
+                    color: $color-white;
+                    text-transform: uppercase;
+                  }
+                }
+                .post-title {
+                  margin: 0 auto;
+                  width: 90%; //100%;
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  .title {
+                    @include text-font(16px, 500, 16px, 0%);
+                    text-decoration: none;
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                }
+                .post-author {
+                  margin: 0 auto;
+                  width: 90%;
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  .author-label {
+                    margin-right: 10px;
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                  .author {
+                    margin-right: 10px;
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-yellow;
+                  }
+                  .split {
+                    margin-right: 10px;
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                  .date {
+                    margin-right: 10px;
+                    @include text-font(14px, 200, 14px, 0%);
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                }
+                .post-resume {
+                  margin-right: 10px;
+                  width: 90%;
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  display: none;
+                  .resume {
+                    @include text-font(14px, 200, 20px, 0%);
+                    text-align: left;
+                    color: $color-primary-dark;
+                  }
+                }
+                .post-button {
+                  @include flex-horizontal();
+                  justify-content: flex-start;
+                  display: none;
+                  .to-post {
+                    padding: $button-padding;
+                    background-color: $color-yellow;
+                    @include text-font(14px, 500, 14px, 0%);
+                    color: $color-primary-dark;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                  }
+                  .to-post:hover {
+                    background-color: $color-yellow-dark;
+                  }
+                }
+              }
+              .post-box:hover {
+                background-color: $color-yellow-superlight;
+              }
+            }
+          }
+        }
+      }
+      .about {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $site-width;
+        height: $slide-height * 0.7;
+        @include flex-vertical();
+        //border: 2px solid red;
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%; // $slide-height;
+          @include flex-vertical();
+          .decor-box {
+            margin: 0; // 0 auto;
+            width: 100%;
+            height: 5%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            //background-color: orange;
+            .decor-item {
+              margin: 0 auto;
+              height: 100%;
+            }
+            .first {
+              width: 20%;
+              background-color: $color-white;
+            }
+            .second {
+              width: 60%;
+              background-color: $color-yellow;
+            }
+            .third {
+              width: 20%;
+              background-color: $color-primary-light;
+            }
+          }
+          .content-box {
+            margin: 0 auto;
+            width: 100%;
+            height: 95%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            background-color: $color-primary-superlight;
+            .about-us {
+              margin: auto;
+              width: 40%;
+              height: 55%;
+              @include flex-vertical();
+              justify-content: space-between;
+              //border: 1px solid green;
+              .post-category {
+                //margin: 0 auto;
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: block;
+                .category-label {
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-white;
+                  text-transform: uppercase;
+                  display: none;
+                }
+                .category {
+                  //margin-left: 10px;
+                  @include text-font(14px, 700, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary;
+                  text-transform: uppercase;
+                }
+              }
+              .post-title {
+                //margin: 0 auto;
+                width: 90%; //100%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                .title {
+                  @include text-font(20px, 500, 20px, 0%);
+                  text-decoration: none;
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-resume {
+                //margin: 0 auto;
+                //margin-right: 10px;
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: block;
+                .resume {
+                  @include text-font(14px, 200, 20px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-button {
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: block;
+                .to-post {
+                  //padding: $button-padding;
+                  //background-color: $color-yellow;
+                  @include text-font(14px, 700, 14px, 0%);
+                  color: $color-primary-light;
+                  border: none;
+                  outline: none;
+                  cursor: pointer;
+                }
+                .to-post:hover {
+                  background-color: $color-yellow-dark;
+                }
+              }
+            }
+            .our-mission {
+              margin: auto;
+              width: 40%;
+              height: 55%;
+              @include flex-vertical();
+              justify-content: space-between;
+              //border: 1px solid green;
+              .post-category {
+                //margin: 0 auto;
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: block;
+                .category-label {
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-white;
+                  text-transform: uppercase;
+                  display: none;
+                }
+                .category {
+                  //margin-left: 10px;
+                  @include text-font(14px, 700, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary;
+                  text-transform: uppercase;
+                }
+              }
+              .post-title {
+                //margin: 0 auto;
+                width: 90%; //100%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                .title {
+                  @include text-font(20px, 500, 20px, 0%);
+                  text-decoration: none;
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-resume {
+                //margin: 0 auto;
+                //margin-right: 10px;
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: block;
+                .resume {
+                  @include text-font(14px, 200, 20px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-button {
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: none;
+                .to-post {
+                  //padding: $button-padding;
+                  //background-color: $color-yellow;
+                  @include text-font(14px, 700, 14px, 0%);
+                  color: $color-primary-light;
+                  border: none;
+                  outline: none;
+                  cursor: pointer;
+                }
+                .to-post:hover {
+                  background-color: $color-yellow-dark;
+                }
+              }
+            }
+          }
+        }
+      }
+      .categories {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $site-width;
+        height: $slide-height * 0.45;
+        @include flex-vertical();
+        //border: 2px solid red;
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%; // $slide-height;
+          @include flex-vertical();
+          &__heading-box {
+            margin: 0 auto;
+            width: 100%;
+            height: 30%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            //border: 1px solid orange;
+            .heading-text {
+              margin: 0 auto;
+              //width: 100%;
+              @include text-font(24px, 500, 24px, 0%);
+              color: $color-primary-dark;
+            }
+            .heading-link {
+              margin: 0 auto;
+              //width: 100%;
+              @include text-font(16px, 500, 16px, 0%);
+              text-decoration: none;
+              color: $color-primary-dark;
+              display: none;
+            }
+          }
+          &__content-box {
+            margin: 0 auto;
+            width: 100%;
+            height: 70%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            //border: 1px solid green;
+            .category-item {
+              margin: 0 auto;
+              width: 23%;
+              height: 100%;
+              @include flex-vertical();
+              justify-content: space-around;
+              border: 1px solid $color-grey-light;
+              .category-icon {
+                margin: 0 auto;
+                height: 48px;
+                width: auto;
+                width: 90%;
+                //border: 1px solid green;
+                img {
+                  height: 100%;
+                  width: auto;
+                  background-color: $color-white;
+                  border-radius: 3px;
+                  //border: 1px solid green;
+                }
+              }
+              .category-title {
+                margin: 0 auto;
+                width: 90%;
+                @include text-font(18px, 700, 18px, 0%);
+                text-decoration: none;
+                color: $color-primary-dark;
+                text-align: left;
+                cursor: pointer;
+                //border: 1px solid green;
+              }
+              .category-title:hover {
+                color: $color-primary-light;
+              }
+              .category-resume {
+                margin: 0 auto;
+                width: 90%;
+                @include text-font(14px, 300, 18px, 0%);
+                text-align: left;
+                color: $color-primary-dark;
+                //border: 1px solid green;
+              }
+            }
+            .category-item:hover {
+              background-color: $color-yellow;
+            }
+          }
+        }
+      }
+      .authors {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $site-width;
+        height: $slide-height * 0.6;
+        @include flex-vertical();
+        //border: 2px solid red;
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%; // $slide-height;
+          @include flex-vertical();
+          &__heading-box {
+            margin: 0 auto;
+            width: 100%;
+            height: 20%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            //border: 1px solid orange;
+            .heading-text {
+              margin: 0 auto;
+              //width: 100%;
+              @include text-font(24px, 500, 24px, 0%);
+              color: $color-primary-dark;
+            }
+            .heading-link {
+              margin: 0 auto;
+              //width: 100%;
+              @include text-font(16px, 500, 16px, 0%);
+              text-decoration: none;
+              color: $color-primary-dark;
+              display: none;
+            }
+          }
+          &__content-box {
+            margin: 0 auto;
+            width: 100%;
+            height: 80%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            //border: 1px solid green;
+            .author-item {
+              margin: 0 auto;
+              width: 23%;
+              height: 100%;
+              @include flex-vertical();
+              justify-content: space-around;
+              background-color: $color-grey-superlight;
+              border: 1px solid $color-grey-superlight;
+              .author-image {
+                margin: 0 auto;
+                height: 128px;
+                width: auto;
+                //width: 100%;
+                //border: 1px solid green;
+                img {
+                  height: 100%;
+                  width: auto;
+                  background-color: $color-grey-superlight;
+                  border-radius: 3px;
+                  //border: 1px solid green;
+                }
+              }
+              .author-title {
+                margin: 0 auto;
+                width: fit-content; // 100%;
+                @include text-font(18px, 700, 18px, 0%);
+                text-decoration: none;
+                color: $color-primary-dark;
+                text-align: left;
+                cursor: pointer;
+                //border: 1px solid green;
+              }
+              .author-title:hover {
+                color: $color-primary-light;
+              }
+              .author-resume {
+                margin: 0 auto;
+                width: fit-content; // 100%;
+                @include text-font(14px, 300, 18px, 0%);
+                text-align: left;
+                color: $color-primary-dark;
+                //border: 1px solid green;
+              }
+              .author-socials {
+                margin: 0 auto;
+                width: fit-content;
+                @include flex-horizontal();
+                a {
+                  margin-right: 10px;
+                }
+              }
+            }
+            .author-item:hover {
+              background-color: $color-yellow-superlight;
+            }
+            .author-item:hover .author-image img {
+              background-color: $color-yellow-superlight;
+            }
+          }
+        }
+      }
     }
   }
   .footer {
-    margin: 0 auto;
-    width: $site-width;
-    height: $footer-height * 0.9;
-    @include flex-vertical();
-    background-color: $color-primary-dark;
-    &__top {
-      margin: 0 auto;
-      width: $block-width;
-      height: 27%;
-      @include flex-vertical();
-      &__block {
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        @include flex-horizontal();
-        .logo-box {
-          margin: 0 auto;
-          width: 100%;
-          @include flex-horizontal();
-          justify-content: flex-start;
-          .logo {
-            margin: auto 0;
-            height: 20%;
-            width: auto;
-          }
-        }
-        .menu-box {
-          margin: auto 0;
-          width: auto;
-          height: 100%;
-          @include flex-horizontal();
-          justify-content: flex-end;
-          .menu-item {
-            margin: auto 0;
-            margin-left: 20px;
-            @include text-font(14px, 300, 14px, 0%);
-            text-decoration: none;
-            color: $color-white;
-          }
-          .menu-item:hover {
-            color: $color-yellow;
-          }
-        }
-      }
-    }
-    &__center {
-      margin: 0 auto;
-      width: $block-width;
-      height: 46%;
-      @include flex-vertical();
-      background-color: $color-primary;
-      &__block {
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        @include flex-horizontal();
-        .footer-text-box {
-          margin: auto 0;
-          width: 50%;
-          height: 100%;
-          @include flex-horizontal();
-          justify-content: flex-start;
-          .footer-text {
-            margin: auto 0;
-            @include text-font(24px, 400, 28px, 0%);
-            text-decoration: none;
-            color: $color-white;
-          }
-        }
-        .footer-email-box {
-          margin: auto 0;
-          width: 50%;
-          height: 100%;
-          @include flex-horizontal();
-          justify-content: flex-end;
-          .input-email {
-            margin: auto 0;
-            width: 60%;
-            height: 20%;
-            @include text-font(18px, 400, 24px, 0%);
-            border: 1px solid $color-grey-middle;
-            background-color: $color-primary;
-            color: $color-white;
-            box-sizing: border-box;
-          }
-          .input-email::placeholder {
-            padding-left: 20px;
-            @include text-font(14px, 300, 14px, 0%);
-            color: $color-grey-middle;
-          }
-          .input-email:focus {
-            outline: none;
-          }
-          .button-email {
-            margin: auto 0;
-            margin-left: 20px;
-            padding-left: 48px * 0.8;
-            padding-right: 48px * 0.8;
-            width: auto;
-            height: 20%;
-            @include text-font(18px, 400, 24px, 0%);
-            color: $color-primary-dark;
-            background-color: $color-yellow;
-            border: none;
-            outline: none;
-            cursor: pointer;
-          }
-          .button-email:hover {
-            background-color: $color-yellow-dark;
-          }
-        }
-      }
-    }
-    &__bottom {
-      margin: 0 auto;
-      width: $block-width;
-      height: 27%;
-      @include flex-vertical();
-      &__block {
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        @include flex-horizontal();
-        .copyright-box {
-          margin: auto 0;
-          width: 50%;
-          height: 100%;
-          @include flex-horizontal();
-          justify-content: flex-start;
-          .copyright {
-            margin: auto 0;
-            @include text-font(12px, 300, 12px, 0%);
-            text-decoration: none;
-            color: $color-grey-light;
-          }
-        }
-        .social-box {
-          margin: auto 0;
-          width: 50%;
-          height: 100%;
-          @include flex-horizontal();
-          justify-content: flex-end;
-          .social-item {
-            margin: auto 0;
-            margin-left: 20px;
-            @include text-font(14px, 300, 14px, 0%);
-            text-decoration: none;
-            color: $color-white;
-          }
-          .social-item:hover {
-            color: $color-yellow;
-          }
-        }
-      }
-    }
+    @include footer();
   }
 }

@@ -1,0 +1,44 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+@import "../header/header.scss";
+@import "../footer/footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Sen;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: $site-width;
+  min-height: $site-height;
+  @include flex-vertical();
+  justify-content: space-between;
+  .top {
+    margin: 0 auto;
+    width: $site-width;
+    height: auto;
+    @include flex-vertical();
+    justify-content: flex-start;
+    flex-grow: 1;
+    .header {
+      @include header();
+    }
+    main {
+      margin: 0 auto;
+      width: $site-width;
+      min-height: $slide-height;
+      @include flex-vertical();
+      justify-content: flex-start;
+      background-color: $color-white;
+    }
+  }
+  .footer {
+    @include footer();
+  }
+}

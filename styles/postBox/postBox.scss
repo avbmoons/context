@@ -1,0 +1,115 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+// @import "../header/header.scss";
+// @import "../footer/footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Sen;
+}
+
+@mixin post-box() {
+  .post-box {
+    margin: 0 auto;
+    position: absolute;
+    top: auto; // 0;
+    left: 0;
+    z-index: 99;
+    margin: 0 auto;
+    margin-left: 5%;
+    width: 55%;
+    height: 55%;
+    @include flex-vertical();
+    justify-content: space-between;
+    //border: 1px solid red;
+    .post-category {
+      @include flex-horizontal();
+      justify-content: flex-start;
+      display: block;
+      .category-label {
+        @include text-font(14px, 200, 14px, 0%);
+        text-align: left;
+        color: $color-white;
+        text-transform: uppercase;
+      }
+      .category {
+        margin-left: 10px;
+        @include text-font(14px, 700, 14px, 0%);
+        text-align: left;
+        color: $color-white;
+        text-transform: uppercase;
+      }
+    }
+    .post-title {
+      width: 95%;
+      @include flex-horizontal();
+      justify-content: flex-start;
+      .title {
+        @include text-font(36px, 300, 36px, 0%);
+        text-align: left;
+        color: $color-white;
+      }
+    }
+    .post-author {
+      @include flex-horizontal();
+      justify-content: flex-start;
+      .author-label {
+        margin-right: 10px;
+        @include text-font(14px, 200, 14px, 0%);
+        text-align: left;
+        color: $color-white;
+      }
+      .author {
+        margin-right: 10px;
+        @include text-font(14px, 200, 14px, 0%);
+        text-align: left;
+        color: $color-yellow;
+      }
+      .split {
+        margin-right: 10px;
+        @include text-font(14px, 200, 14px, 0%);
+        text-align: left;
+        color: $color-white;
+      }
+      .date {
+        margin-right: 10px;
+        @include text-font(14px, 200, 14px, 0%);
+        text-align: left;
+        color: $color-white;
+      }
+    }
+    .post-resume {
+      margin-right: 10px;
+      width: 75%;
+      @include flex-horizontal();
+      justify-content: flex-start;
+      .resume {
+        @include text-font(14px, 200, 20px, 0%);
+        text-align: left;
+        color: $color-white;
+      }
+    }
+    .post-button {
+      @include flex-horizontal();
+      justify-content: flex-start;
+      .to-post {
+        padding: $button-padding;
+        background-color: $color-yellow;
+        @include text-font(16px, 500, 16px, 0%);
+        color: $color-primary-dark;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      }
+      .to-post:hover {
+        background-color: $color-yellow-light;
+      }
+    }
+  }
+}
+@include post-box();
