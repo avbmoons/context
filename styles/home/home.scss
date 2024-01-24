@@ -219,7 +219,8 @@ body {
                 justify-content: space-between;
                 //border: 1px solid green;
                 .post-image {
-                  width: 100%;
+                  margin-bottom: 20px;
+                  width: 95%; // 100%;
                   height: auto;
                   img {
                     width: inherit;
@@ -245,6 +246,7 @@ body {
                   }
                 }
                 .post-title {
+                  margin-bottom: 10px;
                   width: 100%;
                   @include flex-horizontal();
                   justify-content: flex-start;
@@ -256,6 +258,7 @@ body {
                   }
                 }
                 .post-author {
+                  margin-bottom: 10px;
                   @include flex-horizontal();
                   justify-content: flex-start;
                   .author-label {
@@ -284,6 +287,7 @@ body {
                   }
                 }
                 .post-resume {
+                  margin-bottom: 10px;
                   margin-right: 10px;
                   width: 90%;
                   @include flex-horizontal();
