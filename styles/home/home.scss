@@ -175,13 +175,14 @@ body {
         margin-bottom: 40px;
         width: $block-width;
         //height: $featured-height;
-        height: 90vh; // $slide-height;
+        //height: 90vh; // $slide-height;
+        min-height: 90vh;
         @include flex-vertical();
         //border: 1px solid red;
         &__block {
           margin: 0 auto;
           width: 100%;
-          height: 100%;
+          height: inherit; // 100%;
           @include flex-horizontal();
           justify-content: space-between;
           .post-block {
@@ -192,6 +193,7 @@ body {
             //border: 1px solid green;
             &__heading-box {
               margin: 0 auto;
+              margin-bottom: 40px;
               width: 100%;
               height: 10%;
               @include flex-horizontal();
@@ -214,17 +216,17 @@ body {
               .post-box {
                 margin: auto;
                 width: 90%;
-                height: 90%;
+                height: 100%; // 90%;
                 @include flex-vertical();
                 justify-content: space-between;
                 //border: 1px solid green;
                 .post-image {
                   margin-bottom: 20px;
-                  width: 95%; // 100%;
-                  height: auto;
+                  width: 100%; // auto; // 100%;
+                  height: auto; // 60%; // auto;
                   img {
                     width: inherit;
-                    height: auto;
+                    height: 100%; // auto;
                   }
                 }
                 .post-category {
@@ -247,7 +249,7 @@ body {
                 }
                 .post-title {
                   margin-bottom: 10px;
-                  width: 100%;
+                  width: 90%; // 100%;
                   @include flex-horizontal();
                   justify-content: flex-start;
                   .title {
@@ -299,6 +301,7 @@ body {
                   }
                 }
                 .post-button {
+                  margin-bottom: 20px;
                   @include flex-horizontal();
                   justify-content: flex-start;
                   //width: 35%;
@@ -321,13 +324,14 @@ body {
           .all-posts-block {
             margin: 0 auto;
             width: 40%;
-            height: 100%;
+            height: inherit; // 100%;
             @include flex-vertical();
             //border: 1px solid green;
             &__heading-box {
               margin: 0 auto;
+              margin-bottom: 40px;
               width: 100%;
-              height: 10%;
+              height: fit-content; // 10%;
               @include flex-horizontal();
               justify-content: space-between;
               //border: 1px solid orange;
@@ -350,10 +354,11 @@ body {
               width: 100%;
               height: 90%;
               @include flex-vertical();
-              justify-content: flex-start; // space-between;
+              justify-content: space-between; // flex-start; // space-between;
               //border: 2px solid violet;
               .post-box {
                 margin: auto;
+                margin-bottom: 40px;
                 width: 90%;
                 height: 25%; // 90%;
                 @include flex-vertical();
@@ -400,6 +405,7 @@ body {
                 }
                 .post-author {
                   margin: 0 auto;
+                  margin-bottom: 20px;
                   width: 90%;
                   @include flex-horizontal();
                   justify-content: flex-start;

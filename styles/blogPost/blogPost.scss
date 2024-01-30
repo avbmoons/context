@@ -27,6 +27,8 @@ body {
     justify-content: flex-start;
     flex-grow: 1;
     .header {
+      position: fixed;
+      top: 0;
       @include header();
     }
     main {
@@ -38,7 +40,7 @@ body {
       background-color: $color-white;
       .post-box {
         margin: 0 auto;
-        margin-top: 40px;
+        margin-top: 80px;
         margin-bottom: 40px;
         width: 90%;
         max-height: $slide-height;

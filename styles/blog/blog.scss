@@ -27,6 +27,8 @@ body {
     justify-content: flex-start;
     flex-grow: 1;
     .header {
+      position: fixed;
+      top: 0;
       @include header();
     }
     main {
@@ -38,6 +40,7 @@ body {
       background-color: $color-white;
       .featured {
         margin: 0 auto;
+        margin-top: 60px;
         margin-bottom: 40px;
         width: $site-width;
         //height: $featured-height;
