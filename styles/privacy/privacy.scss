@@ -1,0 +1,131 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+@import "../header/header.scss";
+@import "../footer/footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Sen;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: $site-width;
+  min-height: $site-height;
+  @include flex-vertical();
+  justify-content: space-between;
+  .top {
+    margin: 0 auto;
+    width: $site-width;
+    height: auto;
+    @include flex-vertical();
+    justify-content: flex-start;
+    flex-grow: 1;
+    .header {
+      position: fixed;
+      top: 0;
+      @include header();
+    }
+    main {
+      margin: 0 auto;
+      width: $site-width;
+      min-height: $slide-height;
+      @include flex-vertical();
+      justify-content: flex-start;
+      background-color: $color-white;
+      .privacy-hero {
+        margin: 0 auto;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: $site-width;
+        height: $slide-height * 0.35;
+        @include flex-vertical();
+        background-color: $color-grey-superlight;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: $slide-height;
+          @include flex-horizontal();
+          .info-box {
+            margin: auto;
+            width: 55%;
+            height: 55%;
+            @include flex-vertical();
+            justify-content: space-around;
+            &__heading {
+              margin: 0 auto;
+              @include text-font(16px, 500, 16px, 0%);
+              color: $color-primary;
+              text-align: center;
+              text-transform: uppercase;
+              display: none;
+            }
+            &__title {
+              margin: 0 auto;
+              @include text-font(24px, 700, 24px, 0%);
+              color: $color-primary;
+              text-align: center;
+              //text-transform: uppercase;
+            }
+            &__text {
+              margin: 0 auto;
+              @include text-font(14px, 300, 18px, 0%);
+              color: $color-primary;
+              text-align: center;
+            }
+            .crumbs {
+              margin: 0 auto;
+              @include flex-horizontal();
+              display: none;
+              &__link {
+                margin-right: 10px;
+                @include text-font(16px, 500, 16px, 0%);
+                color: $color-primary;
+                text-transform: uppercase;
+                text-decoration: none;
+              }
+              &__split {
+                margin-right: 10px;
+                @include text-font(16px, 500, 16px, 0%);
+                color: $color-primary;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+      .privacy {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $site-width * 0.55;
+        min-height: $slide-height * 0.35;
+        @include flex-vertical();
+        &__heading {
+          margin-bottom: 20px;
+          @include text-font(18px, 500, 22px, 0%);
+          color: $color-primary;
+          text-align: left;
+        }
+        .first {
+          @include text-font(24px, 500, 28px, 0%);
+        }
+        &__text {
+          margin-bottom: 20px;
+          @include text-font(14px, 300, 18px, 0%);
+          color: $color-primary;
+          text-align: left;
+        }
+      }
+    }
+  }
+  .footer {
+    @include footer();
+  }
+}
