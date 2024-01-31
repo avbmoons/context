@@ -1,0 +1,661 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+@import "../header/header.scss";
+@import "../footer/footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Sen;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: $site-width;
+  min-height: $site-height;
+  @include flex-vertical();
+  justify-content: space-between;
+  .top {
+    margin: 0 auto;
+    width: $site-width;
+    height: auto;
+    @include flex-vertical();
+    justify-content: flex-start;
+    flex-grow: 1;
+    .header {
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      @include header();
+    }
+    main {
+      margin: 0 auto;
+      margin-top: $header-height;
+      width: $site-width;
+      min-height: $slide-height;
+      @include flex-vertical();
+      justify-content: flex-start;
+      background-color: $color-white;
+      .about-hero {
+        margin: 0 auto;
+        margin-top: $header-height;
+        width: $site-width;
+        min-height: $slide-height * 0.5;
+        @include flex-vertical();
+        background-repeat: no-repeat;
+        background-size: cover;
+        .info-box {
+          margin: 0 auto;
+          width: $block-width * 0.9;
+          height: $slide-height * 0.4;
+          @include flex-horizontal();
+          justify-content: space-around;
+          &__title-box {
+            margin: 0;
+            width: 50%;
+            height: 100%;
+            @include flex-vertical();
+            justify-content: flex-start;
+            background-color: $color-white;
+            z-index: 99;
+            &__heading {
+              margin: 0 auto;
+              margin-bottom: 40px;
+              width: 90%;
+              @include text-font(16px, 500, 16px, 0%);
+              color: $color-primary;
+              text-align: left;
+              text-transform: uppercase;
+            }
+            &__title {
+              margin: 0 auto;
+              width: 90%;
+              @include text-font(20px, 700, 28px, 0%);
+              color: $color-primary;
+              text-align: left;
+            }
+          }
+          &__content {
+            margin: 0 auto;
+            width: 50%;
+            height: 100%;
+            @include flex-vertical();
+            justify-content: flex-start;
+            background-color: rgba(255, 255, 255, 0.01);
+            z-index: 999;
+            &__text {
+              margin: 0 auto;
+              width: 90%;
+              @include text-font(14px, 300, 20px, 0%);
+              color: $color-primary;
+              text-align: left;
+            }
+            .crumbs {
+              margin: 0 auto;
+              @include flex-horizontal();
+              display: none;
+              &__link {
+                margin-right: 10px;
+                @include text-font(16px, 500, 16px, 0%);
+                color: $color-primary;
+                text-transform: uppercase;
+                text-decoration: none;
+              }
+              &__split {
+                margin-right: 10px;
+                @include text-font(16px, 500, 16px, 0%);
+                color: $color-primary;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        .hero-image {
+          margin: 0 auto;
+          width: $block-width;
+          height: auto;
+          position: relative;
+          top: -$header-height;
+          img {
+            margin: 0 auto;
+            width: 100%;
+            height: inherit;
+          }
+        }
+      }
+      .counter {
+        margin: 0 auto;
+        width: $block-width * 0.9;
+        height: $header-height;
+        @include flex-vertical();
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%;
+          @include flex-horizontal();
+          justify-content: flex-start;
+          .counter-item {
+            margin: 0;
+            padding: 0 20px 0 20px;
+            width: fit-content;
+            height: 100%;
+            @include flex-vertical();
+            background-color: $color-yellow;
+            &__value {
+              @include text-font(28px, 700, 28px, 0%);
+              color: $color-primary;
+            }
+            &__title {
+              @include text-font(14px, 500, 14px, 0%);
+              color: $color-primary;
+            }
+          }
+        }
+      }
+      .about {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $block-width;
+        height: $slide-height * 0.65;
+        @include flex-vertical();
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%;
+          @include flex-vertical();
+          .decor-box {
+            margin: 0;
+            width: 100%;
+            height: 5%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            .decor-item {
+              margin: 0 auto;
+              height: 100%;
+            }
+            .first {
+              width: 20%;
+              background-color: $color-primary-light;
+            }
+            .second {
+              width: 60%;
+              background-color: $color-yellow;
+            }
+            .third {
+              width: 20%;
+              background-color: $color-primary-light;
+              opacity: 0;
+            }
+          }
+          .content-box {
+            margin: 0 auto;
+            width: 100%;
+            height: 95%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            background-color: $color-primary-superlight;
+            .our-mission {
+              margin: auto;
+              width: 40%;
+              height: 65%;
+              @include flex-vertical();
+              justify-content: space-between;
+              .post-category {
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: block;
+                .category-label {
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-white;
+                  text-transform: uppercase;
+                  display: none;
+                }
+                .category {
+                  @include text-font(14px, 700, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary;
+                  text-transform: uppercase;
+                }
+              }
+              .post-title {
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                .title {
+                  @include text-font(20px, 500, 20px, 0%);
+                  text-decoration: none;
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-resume {
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: block;
+                .resume {
+                  @include text-font(14px, 200, 20px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-button {
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: none;
+                .to-post {
+                  @include text-font(14px, 700, 14px, 0%);
+                  color: $color-primary-light;
+                  border: none;
+                  outline: none;
+                  cursor: pointer;
+                }
+                .to-post:hover {
+                  background-color: $color-yellow-light;
+                }
+              }
+            }
+            .our-vision {
+              margin: auto;
+              width: 40%;
+              height: 65%;
+              @include flex-vertical();
+              justify-content: space-between;
+              .post-category {
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: block;
+                .category-label {
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-white;
+                  text-transform: uppercase;
+                  display: none;
+                }
+                .category {
+                  @include text-font(14px, 700, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary;
+                  text-transform: uppercase;
+                }
+              }
+              .post-title {
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                .title {
+                  @include text-font(20px, 500, 20px, 0%);
+                  text-decoration: none;
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-resume {
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: block;
+                .resume {
+                  @include text-font(14px, 200, 20px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-button {
+                @include flex-horizontal();
+                justify-content: flex-start;
+                display: none;
+                .to-post {
+                  @include text-font(14px, 700, 14px, 0%);
+                  color: $color-primary-light;
+                  border: none;
+                  outline: none;
+                  cursor: pointer;
+                }
+                .to-post:hover {
+                  background-color: $color-yellow-light;
+                }
+              }
+            }
+          }
+        }
+      }
+      .our-team {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $block-width;
+        height: $slide-height * 0.65;
+        @include flex-vertical();
+        .content-box {
+          margin: 0 auto;
+          width: 100%;
+          height: 95%;
+          @include flex-horizontal();
+          justify-content: space-between;
+          background-color: $color-primary-superlight;
+          .our-team-box {
+            margin: auto;
+            width: 45%;
+            height: 75%;
+            @include flex-vertical();
+            justify-content: space-between;
+            .post-category {
+              width: 90%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              display: block;
+              .category-label {
+                @include text-font(14px, 200, 14px, 0%);
+                text-align: left;
+                color: $color-white;
+                text-transform: uppercase;
+                display: none;
+              }
+              .category {
+                @include text-font(18px, 700, 18px, 0%);
+                text-align: left;
+                color: $color-primary;
+              }
+            }
+            .post-title {
+              width: 90%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              .title {
+                @include text-font(16px, 500, 16px, 0%);
+                text-decoration: none;
+                text-align: left;
+                color: $color-primary-dark;
+              }
+            }
+            .post-resume {
+              width: 90%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              display: block;
+              .resume {
+                @include text-font(14px, 200, 20px, 0%);
+                text-align: left;
+                color: $color-primary-dark;
+              }
+            }
+            .post-button {
+              @include flex-horizontal();
+              justify-content: flex-start;
+              display: none;
+              .to-post {
+                @include text-font(14px, 700, 14px, 0%);
+                color: $color-primary-light;
+                border: none;
+                outline: none;
+                cursor: pointer;
+              }
+              .to-post:hover {
+                background-color: $color-yellow-light;
+              }
+            }
+          }
+          .content-image {
+            margin: 0 auto;
+            width: 45%;
+            height: auto;
+            @include flex-vertical();
+          }
+        }
+      }
+      .we-started {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $block-width; // $site-width;
+        height: $slide-height * 0.65;
+        @include flex-vertical();
+        //border: 2px solid red;
+        .content-box {
+          margin: 0 auto;
+          width: 100%;
+          height: 95%;
+          @include flex-horizontal();
+          justify-content: space-between;
+          background-color: $color-primary-superlight;
+          .content-image {
+            margin: 0 auto;
+            width: 45%; // 40%;
+            height: auto; // 65%;
+            @include flex-vertical();
+          }
+          .we-started-box {
+            margin: auto;
+            width: 45%; // 40%;
+            height: 75%;
+            @include flex-vertical();
+            justify-content: space-between;
+            //border: 1px solid green;
+            .post-category {
+              //margin: 0 auto;
+              width: 90%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              display: block;
+              .category-label {
+                @include text-font(14px, 200, 14px, 0%);
+                text-align: left;
+                color: $color-white;
+                text-transform: uppercase;
+                display: none;
+              }
+              .category {
+                //margin-left: 10px;
+                @include text-font(18px, 700, 18px, 0%);
+                text-align: left;
+                color: $color-primary;
+                //text-transform: uppercase;
+              }
+            }
+            .post-title {
+              //margin: 0 auto;
+              width: 90%; //100%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              .title {
+                @include text-font(16px, 500, 16px, 0%);
+                text-decoration: none;
+                text-align: left;
+                color: $color-primary-dark;
+              }
+            }
+            .post-resume {
+              //margin: 0 auto;
+              //margin-right: 10px;
+              width: 90%;
+              @include flex-horizontal();
+              justify-content: flex-start;
+              display: block;
+              .resume {
+                @include text-font(14px, 200, 20px, 0%);
+                text-align: left;
+                color: $color-primary-dark;
+              }
+            }
+            .post-button {
+              @include flex-horizontal();
+              justify-content: flex-start;
+              display: none;
+              .to-post {
+                //padding: $button-padding;
+                //background-color: $color-yellow;
+                @include text-font(14px, 700, 14px, 0%);
+                color: $color-primary-light;
+                border: none;
+                outline: none;
+                cursor: pointer;
+              }
+              .to-post:hover {
+                background-color: $color-yellow-light;
+              }
+            }
+          }
+        }
+      }
+      .authors {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $block-width; // $site-width;
+        min-height: $slide-height * 0.6;
+        @include flex-vertical();
+        //border: 2px solid red;
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%; // $slide-height;
+          @include flex-vertical();
+          &__heading-box {
+            margin: 0 auto;
+            margin-bottom: 40px;
+            width: 100%;
+            height: 20%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            //border: 1px solid orange;
+            .heading-text {
+              margin: 0 auto;
+              //width: 100%;
+              @include text-font(24px, 500, 24px, 0%);
+              color: $color-primary-dark;
+            }
+            .heading-link {
+              margin: 0 auto;
+              //width: 100%;
+              @include text-font(16px, 500, 16px, 0%);
+              text-decoration: none;
+              color: $color-primary-dark;
+              display: none;
+            }
+          }
+          &__content-box {
+            margin: 0 auto;
+            width: 100%;
+            height: auto; // 80%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            flex-wrap: wrap;
+            //border: 1px solid green;
+            .author-item {
+              margin: 0 auto;
+              margin-bottom: 20px;
+              width: 23%;
+              height: $slide-height * 0.45; // 100%;
+              @include flex-vertical();
+              justify-content: space-around;
+              background-color: $color-grey-superlight;
+              border: 1px solid $color-grey-superlight;
+              .author-image {
+                margin: 0 auto;
+                height: 128px;
+                width: auto;
+                //width: 100%;
+                //border: 1px solid green;
+                img {
+                  height: 100%;
+                  width: auto;
+                  background-color: $color-grey-superlight;
+                  border-radius: 3px;
+                  //border: 1px solid green;
+                }
+              }
+              .author-title {
+                margin: 0 auto;
+                width: fit-content; // 100%;
+                @include text-font(18px, 700, 18px, 0%);
+                text-decoration: none;
+                color: $color-primary-dark;
+                text-align: left;
+                cursor: pointer;
+                //border: 1px solid green;
+              }
+              .author-title:hover {
+                color: $color-primary-light;
+              }
+              .author-resume {
+                margin: 0 auto;
+                width: fit-content; // 100%;
+                @include text-font(14px, 300, 18px, 0%);
+                text-align: left;
+                color: $color-primary-dark;
+                //border: 1px solid green;
+              }
+              .author-socials {
+                margin: 0 auto;
+                width: fit-content;
+                @include flex-horizontal();
+                a {
+                  margin-right: 10px;
+                }
+              }
+            }
+            .author-item:hover {
+              background-color: $color-yellow-superlight;
+            }
+            .author-item:hover .author-image img {
+              background-color: $color-yellow-superlight;
+            }
+          }
+        }
+      }
+      .join-us {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $block-width;
+        height: $slide-height * 0.5;
+        @include flex-vertical();
+        //border: 2px solid red;
+        &__block {
+          margin: 0 auto;
+          width: 40%; // 100%;
+          height: 90%; // $slide-height;
+          @include flex-vertical();
+          justify-content: space-around;
+          //border: 2px solid red;
+          &__heading {
+            margin: 0 auto;
+            @include text-font(24px, 500, 30px, 0%);
+            color: $color-primary;
+            text-align: center;
+          }
+          &__resume {
+            margin: 0 auto;
+            @include text-font(16px, 300, 22px, 0%);
+            color: $color-primary;
+            text-align: center;
+          }
+          &__button {
+            margin: 0 auto;
+            .join-button {
+              width: auto; // 40%;
+              padding: $button-padding;
+              @include text-font(16px, 300, 24px, 0%);
+              color: $color-primary;
+              text-align: center;
+              background-color: $color-yellow;
+              border: none;
+              outline: none;
+            }
+            .join-button:hover {
+              background-color: $color-yellow-light;
+              //color: $color-white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    @include footer();
+  }
+}
