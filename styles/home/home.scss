@@ -663,7 +663,7 @@ body {
         margin: 0 auto;
         margin-bottom: 40px;
         width: $block-width; // $site-width;
-        height: $slide-height * 0.45;
+        height: $slide-height * 0.55; // * 0.45;
         @include flex-vertical();
         //border: 2px solid red;
         &__block {
@@ -679,7 +679,7 @@ body {
             justify-content: space-between;
             //border: 1px solid orange;
             .heading-text {
-              margin: 0 auto;
+              margin: auto;
               //width: 100%;
               @include text-font(24px, 500, 24px, 0%);
               color: $color-primary-dark;
@@ -709,11 +709,14 @@ body {
               border: 1px solid $color-grey-light;
               .category-icon {
                 margin: 0 auto;
+                margin-top: 20px;
                 height: 48px;
-                width: auto;
                 width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
                 //border: 1px solid green;
                 img {
+                  margin: 0;
                   height: 100%;
                   width: auto;
                   background-color: $color-white;
@@ -723,24 +726,34 @@ body {
               }
               .category-title {
                 margin: 0 auto;
+                margin-top: 20px;
                 width: 90%;
-                @include text-font(18px, 700, 18px, 0%);
-                text-decoration: none;
-                color: $color-primary-dark;
-                text-align: left;
+                @include flex-horizontal();
+                justify-content: flex-start;
                 cursor: pointer;
                 //border: 1px solid green;
+                &__link {
+                  @include text-font(18px, 700, 18px, 0%);
+                  text-decoration: none;
+                  color: $color-primary-dark;
+                  text-align: left;
+                }
               }
               .category-title:hover {
                 color: $color-primary-light;
               }
               .category-resume {
                 margin: 0 auto;
+                margin-top: 20px;
+                margin-bottom: 20px;
                 width: 90%;
-                @include text-font(14px, 300, 18px, 0%);
-                text-align: left;
-                color: $color-primary-dark;
-                //border: 1px solid green;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                &__text {
+                  @include text-font(14px, 300, 18px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
               }
             }
             .category-item:hover {
@@ -753,7 +766,7 @@ body {
         margin: 0 auto;
         margin-bottom: 40px;
         width: $block-width; // $site-width;
-        height: $slide-height * 0.6;
+        height: $slide-height * 0.55; // * 0.6;
         @include flex-vertical();
         //border: 2px solid red;
         &__block {
@@ -789,6 +802,7 @@ body {
             height: 80%;
             @include flex-horizontal();
             justify-content: space-between;
+            //flex-wrap: wrap;
             //border: 1px solid green;
             .author-item {
               margin: 0 auto;
@@ -800,13 +814,15 @@ body {
               border: 1px solid $color-grey-superlight;
               .author-image {
                 margin: 0 auto;
-                height: 128px;
-                width: auto;
+                height: auto; // 16vh; // auto; // 128px;
+                width: 40%; // auto; // 90%; // auto;
+                @include flex-vertical();
                 //width: 100%;
                 //border: 1px solid green;
                 img {
-                  height: 100%;
-                  width: auto;
+                  margin: auto;
+                  height: auto; // 100%; // auto; // 100%;
+                  width: 100%; // auto; //  100%; // auto;
                   background-color: $color-grey-superlight;
                   border-radius: 3px;
                   //border: 1px solid green;
@@ -815,12 +831,14 @@ body {
               .author-title {
                 margin: 0 auto;
                 width: fit-content; // 100%;
-                @include text-font(18px, 700, 18px, 0%);
-                text-decoration: none;
-                color: $color-primary-dark;
-                text-align: left;
-                cursor: pointer;
                 //border: 1px solid green;
+                &__link {
+                  @include text-font(18px, 700, 18px, 0%);
+                  text-decoration: none;
+                  color: $color-primary-dark;
+                  text-align: left;
+                  cursor: pointer;
+                }
               }
               .author-title:hover {
                 color: $color-primary-light;
@@ -828,17 +846,23 @@ body {
               .author-resume {
                 margin: 0 auto;
                 width: fit-content; // 100%;
-                @include text-font(14px, 300, 18px, 0%);
-                text-align: left;
-                color: $color-primary-dark;
                 //border: 1px solid green;
+                &__text {
+                  @include text-font(14px, 300, 18px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
               }
               .author-socials {
                 margin: 0 auto;
                 width: fit-content;
                 @include flex-horizontal();
+                justify-content: space-between;
                 a {
-                  margin-right: 10px;
+                  margin-right: 1vh; // 10px;
+                  img {
+                    height: 2vh;
+                  }
                 }
               }
             }
@@ -861,9 +885,10 @@ body {
         //border: 2px solid red;
         &__block {
           margin: 0 auto;
-          width: 90%; // 100%;
+          width: 100%; // 90%; // 100%;
           height: 100%; // $slide-height;
           @include flex-horizontal();
+          //border: 1px solid red;
           .feedbacks-info {
             margin: auto;
             width: 35%;

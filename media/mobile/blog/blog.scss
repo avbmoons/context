@@ -1,0 +1,544 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+@import "../header/header.scss";
+@import "../footer/footer.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Sen;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: $site-width;
+  min-height: $site-height;
+  @include flex-vertical();
+  justify-content: space-between;
+  .top {
+    margin: 0 auto;
+    width: $site-width;
+    height: auto;
+    @include flex-vertical();
+    justify-content: flex-start;
+    flex-grow: 1;
+    .header {
+      position: fixed;
+      top: 0;
+      @include header();
+    }
+    main {
+      margin: 0 auto;
+      width: $site-width;
+      min-height: $slide-height;
+      @include flex-vertical();
+      justify-content: flex-start;
+      background-color: $color-white;
+      .featured {
+        margin: 0 auto;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        width: $site-width;
+        //height: $featured-height;
+        height: auto; // $slide-height * 0.7; // 90vh; // $slide-height;
+        @include flex-vertical();
+        background-color: $color-yellow-superlight;
+        //border: 1px solid red;
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%;
+          @include flex-horizontal();
+          //@include flex-vertical();
+          justify-content: space-between;
+          .post-box {
+            margin: auto;
+            margin-bottom: 20px;
+            width: $site-width; // $block-width; // 90%;
+            height: auto; // 80%;
+            //@include flex-horizontal();
+            @include flex-vertical();
+            justify-content: space-between;
+            flex-direction: column-reverse;
+            //border: 1px solid green;
+            .post-content {
+              margin: 0 auto;
+              margin-bottom: 20px;
+              width: 90%; // 45%;
+              height: auto; // 100%;
+              @include flex-vertical();
+              justify-content: space-evenly;
+              //border: 1px solid orange;
+              .post-type {
+                margin-bottom: 20px;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                //display: block;
+                .type-label {
+                  @include text-font(14px, 500, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary;
+                  text-transform: uppercase;
+                }
+                .type {
+                  margin-right: 10px;
+                  @include text-font(14px, 500, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary;
+                  text-transform: uppercase;
+                }
+              }
+              .post-title {
+                margin-bottom: 20px;
+                width: 100%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                .title {
+                  @include text-font(20px, 500, 20px, 0%);
+                  text-decoration: none;
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-author {
+                margin-bottom: 20px;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                .author-label {
+                  margin-right: 10px;
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+                .author {
+                  margin-right: 10px;
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-decoration: none;
+                  text-align: left;
+                  color: $color-primary-light;
+                  cursor: pointer;
+                }
+                .split {
+                  margin-right: 10px;
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+                .date {
+                  margin-right: 10px;
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+                .author:hover {
+                  color: $color-yellow;
+                }
+              }
+              .post-resume {
+                margin-right: 10px;
+                margin-bottom: 20px;
+                width: 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                .resume {
+                  @include text-font(14px, 200, 20px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-button {
+                //margin-bottom: 20px;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                //width: 35%;
+                .to-post {
+                  padding: $button-padding;
+                  background-color: $color-yellow;
+                  @include text-font(14px, 500, 14px, 0%);
+                  color: $color-primary-dark;
+                  border: none;
+                  outline: none;
+                  cursor: pointer;
+                }
+                .to-post:hover {
+                  background-color: $color-yellow-light;
+                }
+              }
+            }
+            .post-image {
+              margin: auto;
+              //margin-top: 20px;
+              margin-bottom: 20px;
+              width: 90%; // auto; // 45%;
+              height: auto; // 100%; // auto;
+              @include flex-horizontal();
+              align-items: center;
+              //border: 1px solid green;
+              img {
+                width: 100%; // auto; // 100%;
+                height: auto; // 100%; // auto;
+              }
+            }
+          }
+        }
+      }
+      .all-posts {
+        margin: 0 auto;
+        margin-bottom: 20px;
+        width: $block-width; // 40%;
+        //height: 100%;
+        //min-height: $slide-height * 0.5;
+        height: auto;
+        @include flex-vertical();
+        //border: 1px solid green;
+        &__heading-box {
+          margin: 0 auto;
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          width: 100%;
+          height: 10%;
+          @include flex-horizontal();
+          justify-content: space-between;
+          border-bottom: 2px solid $color-grey-light;
+          //border: 1px solid orange;
+          .heading-text {
+            margin: auto 0;
+            //width: 100%;
+            @include text-font(24px, 500, 24px, 0%);
+            color: $color-primary-dark;
+          }
+          .heading-link {
+            margin: auto 0;
+            //width: 100%;
+            @include text-font(16px, 500, 16px, 0%);
+            text-decoration: none;
+            color: $color-primary-dark;
+          }
+        }
+        &__content-box {
+          margin: 0 auto;
+          //margin-bottom: 20px;
+          width: 100%;
+          height: auto; // 90%;
+          @include flex-vertical();
+          justify-content: flex-start; // space-between;
+          //border: 2px solid violet;
+          .post-box {
+            margin: auto;
+            margin-bottom: 20px;
+            width: 100%; // 90%;
+            height: auto; // $slide-height * 0.45; // 25%; // 90%;
+            //@include flex-horizontal();
+            @include flex-vertical();
+            justify-content: space-between;
+            //border: 1px solid green;
+            .post-image-box {
+              margin: auto;
+              margin-bottom: 20px;
+              width: 100%; // auto; // 40%;
+              height: auto; // 100%; // auto;
+              //display: block;
+              img {
+                margin: auto;
+                width: 100%; // auto; // 100%;
+                height: auto; // 100%; // auto;
+              }
+            }
+            .post-content-box {
+              margin: 0 auto;
+              margin-bottom: 20px;
+              width: 100%; // 50%;
+              @include flex-vertical();
+              justify-content: space-evenly;
+              //border: 1px solid green;
+              .post-category {
+                margin-bottom: 20px;
+                width: 100%; // 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                //display: none;
+                //border: 1px solid green;
+                .category-label {
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary;
+                  text-transform: uppercase;
+                  display: none;
+                }
+                .category {
+                  //margin-left: 10px;
+                  @include text-font(14px, 700, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary;
+                  text-transform: uppercase;
+                }
+              }
+              .post-title {
+                //margin: 0 auto;
+                margin-bottom: 20px;
+                width: 100%; // 90%; //100%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                //border: 1px solid green;
+                .title {
+                  @include text-font(16px, 500, 16px, 0%);
+                  text-decoration: none;
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-author {
+                //margin: 0 auto;
+                margin-bottom: 20px;
+                width: 100%; // 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                .author-label {
+                  margin-right: 10px;
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+                .author {
+                  margin-right: 10px;
+                  @include text-font(14px, 500, 14px, 0%);
+                  text-decoration: none;
+                  text-align: left;
+                  color: $color-primary-light;
+                  cursor: pointer;
+                }
+                .author:hover {
+                  color: $color-yellow;
+                }
+                .split {
+                  margin-right: 10px;
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+                .date {
+                  margin-right: 10px;
+                  @include text-font(14px, 200, 14px, 0%);
+                  text-align: left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-resume {
+                //margin-right: 10px;
+                margin-bottom: 20px;
+                width: 100%; // 90%;
+                @include flex-horizontal();
+                justify-content: flex-start;
+                //display: none;
+                .resume {
+                  @include text-font(14px, 200, 20px, 0%);
+                  text-align: justify; // left;
+                  color: $color-primary-dark;
+                }
+              }
+              .post-button {
+                margin-bottom: 20px;
+                @include flex-horizontal();
+                justify-content: flex-end;
+                display: none;
+                .to-post {
+                  padding: $button-padding;
+                  background-color: $color-yellow;
+                  @include text-font(14px, 500, 14px, 0%);
+                  color: $color-primary-dark;
+                  border: none;
+                  outline: none;
+                  cursor: pointer;
+                }
+                .to-post:hover {
+                  background-color: $color-yellow-light;
+                }
+              }
+            }
+          }
+          .post-box:hover {
+            background-color: $color-yellow-superlight;
+          }
+        }
+        .paginator {
+          margin: 0 auto;
+          //margin-bottom: 20px;
+          width: 90%; // 100%;
+          height: auto; // 60px;
+          @include flex-horizontal();
+          //border: 1px solid violet;
+          .page-button {
+            height: 40px; // 100%;
+            width: 40px; // 60px;
+            @include text-font(28px, 500, 28px, 0%);
+            border: none;
+            outline: none;
+            border-radius: 50%;
+            cursor: pointer;
+          }
+          .previous {
+            margin-right: 10px;
+            background-color: $color-white; // $color-yellow-superlight;
+            color: $color-primary;
+          }
+          .next {
+            margin-left: 10px;
+            background-color: $color-primary;
+            color: $color-white;
+          }
+        }
+      }
+      .categories {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $block-width; // $site-width;
+        height: auto; // $slide-height * 0.45;
+        @include flex-vertical();
+        //border: 2px solid red;
+        &__block {
+          margin: 0 auto;
+          width: 100%;
+          height: 100%; // $slide-height;
+          @include flex-vertical();
+          &__heading-box {
+            margin: 0 auto;
+            width: 100%;
+            height: 30%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            //border: 1px solid orange;
+            .heading-text {
+              margin: 0; // auto;
+              padding: 20px 0 20px 0;
+              //width: 100%;
+              @include text-font(24px, 500, 24px, 0%);
+              color: $color-primary-dark;
+              text-align: left;
+            }
+            .heading-link {
+              margin: 0 auto;
+              //width: 100%;
+              @include text-font(16px, 500, 16px, 0%);
+              text-decoration: none;
+              color: $color-primary-dark;
+              display: none;
+            }
+          }
+          &__content-box {
+            margin: 0 auto;
+            width: 100%;
+            height: 70%;
+            @include flex-horizontal();
+            justify-content: space-between;
+            flex-wrap: wrap;
+            //border: 1px solid green;
+            .category-item {
+              margin: 0 auto;
+              margin-top: 20px;
+              width: 47%; // 23%;
+              height: 100%;
+              @include flex-vertical();
+              justify-content: space-around;
+              border: 1px solid $color-grey-light;
+              .category-icon {
+                margin: 0 auto;
+                margin-top: 20px;
+                height: 48px;
+                width: auto;
+                width: 90%;
+                //border: 1px solid green;
+                img {
+                  height: 100%;
+                  width: auto;
+                  background-color: $color-white;
+                  border-radius: 3px;
+                  //border: 1px solid green;
+                }
+              }
+              .category-title {
+                margin: 0 auto;
+                margin-top: 20px;
+                width: 90%;
+                @include text-font(18px, 700, 18px, 0%);
+                text-decoration: none;
+                color: $color-primary-dark;
+                text-align: left;
+                cursor: pointer;
+                //border: 1px solid green;
+              }
+              .category-title:hover {
+                color: $color-primary-light;
+              }
+              .category-resume {
+                margin: 0 auto;
+                margin-top: 20px;
+                width: 90%;
+                @include text-font(14px, 300, 18px, 0%);
+                text-align: left;
+                color: $color-primary-dark;
+                //border: 1px solid green;
+              }
+            }
+            .category-item:hover {
+              background-color: $color-yellow;
+            }
+          }
+        }
+      }
+      .join-us {
+        margin: 0 auto;
+        margin-bottom: 40px;
+        width: $block-width;
+        height: auto; // $slide-height * 0.5;
+        @include flex-vertical();
+        //border: 2px solid red;
+        &__block {
+          margin: 0 auto;
+          width: 90%; // 40%; // 100%;
+          height: fit-content; // 90%; // $slide-height;
+          @include flex-vertical();
+          justify-content: space-around;
+          //border: 2px solid red;
+          &__heading {
+            margin: 0 auto;
+            margin-bottom: 20px;
+            @include text-font(24px, 500, 30px, 0%);
+            color: $color-primary;
+            text-align: center;
+          }
+          &__resume {
+            margin: 0 auto;
+            margin-bottom: 20px;
+            @include text-font(16px, 300, 22px, 0%);
+            color: $color-primary;
+            text-align: center;
+          }
+          &__button {
+            margin: 0 auto;
+            .join-button {
+              width: auto; // 40%;
+              padding: $button-padding;
+              @include text-font(16px, 300, 24px, 0%);
+              color: $color-primary;
+              text-align: center;
+              background-color: $color-yellow;
+              border: none;
+              outline: none;
+            }
+            .join-button:hover {
+              background-color: $color-yellow-light;
+              //color: $color-white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer {
+    @include footer();
+  }
+}

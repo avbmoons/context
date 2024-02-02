@@ -1,0 +1,70 @@
+@use "sass:math";
+
+$site-width: 100%;
+$site-height: 100vh;
+$site-maket-width: 1440px;
+
+$header-width: 100%;
+$header-height: 10vh; // 80px;
+
+$footer-width: 100%;
+$footer-height: 70vh; // 560px;
+
+$slide-width: 100%;
+$slide-height: 90vh; // 720px;
+
+$block-maket-width: 1282px;
+$block-width: math.div($block-maket-width, $site-maket-width) * $site-width;
+
+$coeff: math.div($block-width, $block-maket-width);
+
+$featured-width: $block-width;
+
+$about-width: $block-width;
+
+$special-post-width: $block-width;
+
+$logo-component-width: $block-width;
+
+$feedback-width: $block-width;
+
+$button-padding: 16px 48px 16px 48px;
+
+$input-height: 7vh;
+
+$color-primary: #292b3d; //rgb(41,43,61);
+$color-primary-dark: #232536; //rgb(35,37,54);
+$color-primary-light: #592ea9; //rgb(89,46,169);
+$color-primary-superlight: #f4f0f8;
+$color-grey-middle: #6d6e76; //rgb(109,110,118);
+$color-grey-dark: #4c4c4c; //rgb(76,76,76);
+$color-grey-light: #c7c9d6; //rgb(230,232,250);
+$color-grey-superlight: #f4f4f4;
+$color-yellow: #ffd050; //rgb(255,208,80);
+$color-yellow-dark: #b8973e; //rgb(184,151,62);
+$color-yellow-light: #ffe18f; //rgb(255,225,143);
+$color-yellow-superlight: #fcf4e1; //rgb(252,244,225);
+$color-white: white;
+
+@font-face {
+  font-family: Sen;
+  src: url(../../../assets/fonts/Sen/Sen-VariableFont_wght.ttf);
+}
+
+@mixin flex-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+@mixin flex-horizontal {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+@mixin text-font($font-size, $font-weight, $line-height, $letter-spacing) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}

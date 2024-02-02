@@ -4,7 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>footer</title>
-    <link rel="stylesheet" href="../styles/footer/footer.css" />
+    <link
+      rel="stylesheet"
+      media="only screen and (max-width:376px)"
+      href="../media/mobile/footer/footer.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (min-width: 377px) and (max-width:768px)"
+      href="../media/mobile/footer/footer.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (min-width: 769px) and (max-width:1023px)"
+      href="../media/mobile/footer/footer.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (min-width:1024px)"
+      href="../styles/footer/footer.css"
+    />
+    <!-- <link rel="stylesheet" href="../styles/footer/footer.css" /> -->
   </head>
   <body>
     <footer class="footer">
@@ -26,6 +46,19 @@
               >Privacy&nbsp;Policy</a
             >
           </nav>
+          <div class="menu-mini">
+            <button class="button-mini">
+              <img src="../assets/icons/burger24.png" alt="menu" />
+            </button>
+            <div class="menu-mini-box">
+              <a class="menu-item" href="../index.html">Home</a>
+              <a class="menu-item" href="../pages/blog.html">Blog</a>
+              <a class="menu-item" href="../pages/about.html">About&nbsp;Us</a>
+              <a class="menu-item" href="../pages/contact.html"
+                >Contact&nbsp;Us</a
+              >
+            </div>
+          </div>
         </div>
       </div>
       <div class="footer__center">

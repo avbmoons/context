@@ -1,0 +1,208 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Sen;
+}
+
+@mixin header {
+  margin: 0 auto;
+  width: 100%;
+  height: $header-height;
+  @include flex-vertical();
+  background-color: $color-primary-dark;
+  &__block {
+    margin: 0 auto;
+    width: $block-width;
+    height: 70%;
+    @include flex-horizontal();
+    justify-content: space-between;
+    &__right {
+      margin: 0 auto;
+      width: 50%;
+      @include flex-vertical();
+      .logo-box {
+        margin: 0 auto;
+        width: 100%;
+        @include flex-horizontal();
+        justify-content: flex-start;
+        .logo {
+          margin: auto 0;
+          height: 70%;
+          width: auto;
+        }
+      }
+    }
+    &__left {
+      margin: 0 auto;
+      width: 50%;
+      @include flex-vertical();
+      &__box {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        @include flex-horizontal();
+        justify-content: flex-end;
+        .menu-box {
+          margin: auto 0;
+          width: auto;
+          height: 100%;
+          @include flex-horizontal();
+          justify-content: flex-end;
+          //flex-wrap: wrap;
+          .menu-item {
+            display: none;
+            margin: auto 0;
+            margin-left: 20px;
+            @include text-font(16px, 300, 16px, 0%);
+            text-decoration: none;
+            color: $color-white;
+          }
+          .menu-item:hover {
+            color: $color-yellow;
+          }
+          //   .menu-mini {
+          //     margin: auto 0;
+          //     margin-left: 20px;
+          //     @include flex-vertical();
+          //     position: relative;
+          //     display: inline-flex; // inline-block;
+          //     .button-mini {
+          //       //display: none;
+          //       display: block;
+          //       margin: auto 0;
+          //       width: auto;
+          //       height: 100%;
+          //       background: none;
+          //       //background-color: orange;
+          //       border: none;
+          //       cursor: pointer;
+          //       position: relative;
+          //     }
+          //     .menu-mini-box {
+          //       position: absolute;
+          //       top: $header-height * 0.45;
+          //       left: -5vw;
+          //       margin: auto 0;
+          //       width: auto;
+          //       height: fit-content;
+          //       @include flex-vertical();
+          //       justify-content: flex-end;
+          //       background-color: $color-primary-dark;
+          //       display: none;
+          //       .menu-item {
+          //         margin: auto 0;
+          //         margin-bottom: 20px;
+          //         padding: 0 20px 0 20px;
+          //         @include text-font(16px, 300, 16px, 0%);
+          //         text-decoration: none;
+          //         color: $color-white;
+          //       }
+          //       .menu-item:hover {
+          //         color: $color-yellow;
+          //       }
+          //     }
+          //   }
+          //   .menu-mini:hover .menu-mini-box {
+          //     display: flex;
+          //   }
+        }
+        .menu-mini {
+          margin: auto 0;
+          margin-left: 20px;
+          @include flex-vertical();
+          position: relative;
+          display: inline-flex; // inline-block;
+          .button-mini {
+            //display: none;
+            display: block;
+            margin: auto 0;
+            width: auto;
+            height: 100%;
+            background: none;
+            //background-color: orange;
+            border: none;
+            cursor: pointer;
+            position: relative;
+          }
+          .menu-mini-box {
+            position: absolute;
+            top: $header-height * 0.45;
+            left: -25vw;
+            float: right;
+            margin: auto 0;
+            padding-top: $header-height * 0.45;
+            width: auto; // 50vw; // auto;
+            height: fit-content;
+            @include flex-vertical();
+            justify-content: flex-end;
+            background-color: $color-primary-dark;
+            background-color: rgba(35, 37, 54, 0.8);
+            display: none;
+            .menu-item {
+              margin: auto 0;
+              margin-bottom: 20px;
+              padding: 0 20px 0 20px;
+              @include text-font(16px, 300, 16px, 0%);
+              text-decoration: none;
+              color: $color-white;
+            }
+            .menu-item:hover {
+              color: $color-yellow;
+            }
+          }
+        }
+        .menu-mini:hover .menu-mini-box {
+          display: flex;
+        }
+        .subscribe-box {
+          margin: auto 0;
+          margin-left: 20px;
+          width: auto;
+          height: 100%;
+          @include flex-horizontal();
+          .button {
+            display: none;
+            margin: auto 0;
+            padding-left: 48px * 0.9;
+            padding-right: 48px * 0.9;
+            width: auto;
+            height: 100%;
+            @include text-font(18px, 400, 24px, 0%);
+            color: $color-primary-dark;
+            background-color: $color-white;
+            border: none;
+            outline: none;
+            cursor: pointer;
+          }
+          .button:hover {
+            background-color: $color-yellow;
+          }
+          .button-mini {
+            //display: none;
+            display: block;
+            margin: auto 0;
+            width: auto;
+            height: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            //background-color: orange;
+            //border: 1px solid orange;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header {
+  @include header();
+}

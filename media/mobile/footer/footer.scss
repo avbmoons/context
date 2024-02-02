@@ -1,0 +1,245 @@
+@use "sass:math";
+
+@import "../vars/vars.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Sen;
+}
+
+@mixin footer {
+  margin: 0 auto;
+  width: 100%; // $site-width;
+  height: $footer-height; // * 0.9;
+  @include flex-vertical();
+  background-color: $color-primary-dark;
+  &__top {
+    margin: 0 auto;
+    width: 100%; // $block-width;
+    height: 27%;
+    @include flex-vertical();
+    &__block {
+      margin: 0 auto;
+      width: $block-width; // 100%;
+      height: 100%;
+      @include flex-horizontal();
+      justify-content: space-between;
+      .logo-box {
+        margin: 0; // 0 auto;
+        width: auto; // 20%; // 100%;
+        height: 100%;
+        @include flex-horizontal();
+        justify-content: flex-start;
+        //border: 1px solid yellow;
+        .logo {
+          margin: auto 0;
+          height: 20%;
+          width: auto;
+          //border: 1px solid orange;
+        }
+      }
+      .menu-box {
+        margin: auto 0;
+        width: auto;
+        height: 100%;
+        @include flex-horizontal();
+        justify-content: flex-end;
+        //flex-wrap: wrap;
+        //border: 1px solid orange;
+        display: none;
+        .menu-item {
+          margin: auto 0;
+          margin-left: 20px;
+          @include text-font(14px, 300, 14px, 0%);
+          text-decoration: none;
+          color: $color-white;
+        }
+        .menu-item:hover {
+          color: $color-yellow;
+        }
+      }
+      .menu-mini {
+        margin: auto 0;
+        margin-left: 20px;
+        @include flex-vertical();
+        position: relative;
+        display: inline-flex; // inline-block;
+        .button-mini {
+          //display: none;
+          display: block;
+          margin: auto 0;
+          width: auto;
+          height: 100%;
+          background: none;
+          //background-color: orange;
+          border: none;
+          cursor: pointer;
+          position: relative;
+        }
+        .menu-mini-box {
+          position: absolute;
+          top: -$footer-height * 0.45; // $header-height * 0.45;
+          left: -25vw; // -40vw;
+          float: right;
+          margin: auto 0;
+          //padding-top: $header-height * 0.45;
+          padding-bottom: $footer-height * 0.14;
+          width: auto; // 50vw; // auto;
+          height: fit-content;
+          @include flex-vertical();
+          justify-content: flex-end;
+          background-color: $color-primary-dark;
+          background-color: rgba(35, 37, 54, 0.8);
+          display: none;
+          //border: 1px solid yellow;
+          .menu-item {
+            margin: auto 0;
+            margin-top: 20px;
+            padding: 0 20px 0 20px;
+            @include text-font(16px, 300, 16px, 0%);
+            text-decoration: none;
+            color: $color-white;
+          }
+          .menu-item:hover {
+            color: $color-yellow;
+          }
+        }
+      }
+      .menu-mini:hover .menu-mini-box {
+        display: flex;
+      }
+    }
+  }
+  &__center {
+    margin: 0 auto;
+    width: 100%; // $block-width;
+    height: 46%;
+    @include flex-vertical();
+    background-color: $color-primary;
+    &__block {
+      margin: 0 auto;
+      width: $block-width; // 100%;
+      height: 100%;
+      //@include flex-horizontal();
+      @include flex-vertical();
+      .footer-text-box {
+        margin: 0 auto; // auto 0;
+        //margin-left: 20px;
+        width: 100%; // 50%;
+        height: 100%;
+        @include flex-horizontal();
+        //justify-content: flex-start;
+        //border: 1px solid orange;
+        .footer-text {
+          margin: auto 0;
+          @include text-font(18px, 400, 22px, 0%);
+          text-decoration: none;
+          color: $color-white;
+          text-align: center; // justify; // left;
+        }
+      }
+      .footer-email-box {
+        margin: 0 auto; //  auto 0;
+        //margin-right: 20px;
+        width: 100%; // 50%;
+        height: 100%;
+        //@include flex-horizontal();
+        @include flex-vertical();
+        //justify-content: flex-end;
+        //border: 1px solid orange;
+        .input-email {
+          margin: 0 auto; // auto 0;
+          margin-bottom: 20px;
+          width: 100%; // 60%;
+          height: $input-height; // 20%;
+          @include text-font(18px, 400, 24px, 0%);
+          border: 1px solid $color-grey-middle;
+          background-color: $color-primary;
+          color: $color-white;
+          box-sizing: border-box;
+        }
+        .input-email::placeholder {
+          padding-left: 20px;
+          @include text-font(14px, 300, 14px, 0%);
+          color: $color-grey-middle;
+        }
+        .input-email:focus {
+          outline: none;
+        }
+        .button-email {
+          margin: 0 auto; // auto 0;
+          //margin-left: 20px;
+          //   padding-left: 48px * 0.8;
+          //   padding-right: 48px * 0.8;
+          width: 50%; // auto;
+          height: $input-height; // 20%;
+          //@include flex-horizontal();
+          @include text-font(16px, 400, 16px, 0%);
+          color: $color-primary-dark;
+          background-color: $color-yellow;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+        .button-email:hover {
+          background-color: $color-yellow-light;
+        }
+      }
+    }
+  }
+  &__bottom {
+    margin: 0 auto;
+    width: 100%; // $block-width;
+    height: 27%;
+    @include flex-vertical();
+    &__block {
+      margin: 0 auto;
+      width: $block-width; // 100%;
+      height: 100%;
+      //@include flex-horizontal();
+      //border: 1px solid yellow;
+      @include flex-vertical();
+      flex-direction: column-reverse;
+      .copyright-box {
+        margin: 0 auto; // auto 0;
+        width: 90%;
+        height: 40%; // 100%;
+        @include flex-horizontal();
+        justify-content: flex-start;
+        //border: 1px solid orange;
+        .copyright {
+          margin: auto; // auto 0;
+          @include text-font(12px, 300, 12px, 0%);
+          text-decoration: none;
+          color: $color-grey-light;
+        }
+      }
+      .social-box {
+        margin: 0 auto; // auto 0;
+        width: 90%;
+        height: 40%; // 100%;
+        @include flex-horizontal();
+        justify-content: space-around; // flex-end;
+        //border: 1px solid orange;
+        .social-item {
+          margin: auto; // auto 0;
+          //margin-left: 20px;
+          @include text-font(14px, 300, 14px, 0%);
+          text-decoration: none;
+          color: $color-white;
+        }
+        .social-item:hover {
+          color: $color-yellow;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  @include footer();
+}

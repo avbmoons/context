@@ -5,6 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="styles/home/home.css" />
+    <link
+      rel="stylesheet"
+      media="only screen and (max-width:376px)"
+      href="media/mobile/home/home.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (min-width: 377px) and (max-width:768px)"
+      href="media/mobile/home/home.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (min-width: 769px) and (max-width:1023px)"
+      href="media/mobile/home/home.css"
+    />
+    <link
+      rel="stylesheet"
+      media="only screen and (min-width:1024px)"
+      href="styles/header/header.css"
+    />
   </head>
   <body>
     <div class="wrapper">
@@ -28,8 +48,26 @@
                     >Contact&nbsp;Us</a
                   >
                 </nav>
+                <div class="menu-mini">
+                  <button class="button-mini">
+                    <img src="assets/icons/burger24.png" alt="menu" />
+                  </button>
+                  <div class="menu-mini-box">
+                    <a class="menu-item" href="index.html">Home</a>
+                    <a class="menu-item" href="pages/blog.html">Blog</a>
+                    <a class="menu-item" href="pages/about.html"
+                      >About&nbsp;Us</a
+                    >
+                    <a class="menu-item" href="pages/contacts.html"
+                      >Contact&nbsp;Us</a
+                    >
+                  </div>
+                </div>
                 <section class="subscribe-box">
                   <button class="button">Subscribe</button>
+                  <button class="button-mini">
+                    <img src="assets/icons/check24.png" alt="check" />
+                  </button>
                 </section>
               </div>
             </div>
@@ -315,12 +353,12 @@
                     <img src="assets/icons/bussines.png" alt="icon" />
                   </div>
                   <div class="category-title">
-                    <a class="category-title" href="pages/category.html"
+                    <a class="category-title__link" href="pages/category.html"
                       >Business</a
                     >
                   </div>
                   <div class="category-resume">
-                    <p class="category-resume">
+                    <p class="category-resume__text">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
                   </div>
@@ -330,12 +368,12 @@
                     <img src="assets/icons/startup.png" alt="icon" />
                   </div>
                   <div class="category-title">
-                    <a class="category-title" href="pages/category.html"
+                    <a class="category-title__link" href="pages/category.html"
                       >Startup</a
                     >
                   </div>
                   <div class="category-resume">
-                    <p class="category-resume">
+                    <p class="category-resume__text">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
                   </div>
@@ -345,12 +383,12 @@
                     <img src="assets/icons/economy.png" alt="icon" />
                   </div>
                   <div class="category-title">
-                    <a class="category-title" href="pages/category.html"
+                    <a class="category-title__link" href="pages/category.html"
                       >Economy</a
                     >
                   </div>
                   <div class="category-resume">
-                    <p class="category-resume">
+                    <p class="category-resume__text">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
                   </div>
@@ -360,12 +398,12 @@
                     <img src="assets/icons/technology.png" alt="icon" />
                   </div>
                   <div class="category-title">
-                    <a class="category-title" href="pages/category.html"
+                    <a class="category-title__link" href="pages/category.html"
                       >Technology</a
                     >
                   </div>
                   <div class="category-resume">
-                    <p class="category-resume">
+                    <p class="category-resume__text">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
                   </div>
@@ -386,12 +424,12 @@
                     <img src="assets/authors/author-1.png" alt="icon" />
                   </div>
                   <div class="author-title">
-                    <a class="author-title" href="pages/author.html"
-                      >Floyd&nbsp;Miles</a
+                    <a class="author-title__link" href="pages/author.html"
+                      >Floyd Miles</a
                     >
                   </div>
                   <div class="author-resume">
-                    <p class="author-resume">Content Writer @Company</p>
+                    <p class="author-resume__text">Content Writer @Company</p>
                   </div>
                   <div class="author-socials">
                     <a href="#"
@@ -413,12 +451,12 @@
                     <img src="assets/authors/author-2.png" alt="icon" />
                   </div>
                   <div class="author-title">
-                    <a class="author-title" href="pages/author.html"
-                      >Dianne&nbsp;Russell</a
+                    <a class="author-title__link" href="pages/author.html"
+                      >Dianne Russell</a
                     >
                   </div>
                   <div class="author-resume">
-                    <p class="author-resume">Content Writer @Company</p>
+                    <p class="author-resume__text">Content Writer @Company</p>
                   </div>
                   <div class="author-socials">
                     <a href="#"
@@ -440,12 +478,12 @@
                     <img src="assets/authors/author-3.png" alt="icon" />
                   </div>
                   <div class="author-title">
-                    <a class="author-title" href="pages/author.html"
-                      >Jenny&nbsp;Wilson</a
+                    <a class="author-title__link" href="pages/author.html"
+                      >Jenny Wilson</a
                     >
                   </div>
                   <div class="author-resume">
-                    <p class="author-resume">Content Writer @Company</p>
+                    <p class="author-resume__text">Content Writer @Company</p>
                   </div>
                   <div class="author-socials">
                     <a href="#"
@@ -467,12 +505,12 @@
                     <img src="assets/authors/author-4.png" alt="icon" />
                   </div>
                   <div class="author-title">
-                    <a class="author-title" href="pages/author.html"
-                      >Leslie&nbsp;Alexander</a
+                    <a class="author-title__link" href="pages/author.html"
+                      >Leslie Alexander</a
                     >
                   </div>
                   <div class="author-resume">
-                    <p class="author-resume">Content Writer @Company</p>
+                    <p class="author-resume__text">Content Writer @Company</p>
                   </div>
                   <div class="author-socials">
                     <a href="#"
@@ -584,6 +622,19 @@
                 >Privacy&nbsp;Policy</a
               >
             </nav>
+            <div class="menu-mini">
+              <button class="button-mini">
+                <img src="assets/icons/burger24.png" alt="menu" />
+              </button>
+              <div class="menu-mini-box">
+                <a class="menu-item" href="index.html">Home</a>
+                <a class="menu-item" href="pages/blog.html">Blog</a>
+                <a class="menu-item" href="pages/about.html">About&nbsp;Us</a>
+                <a class="menu-item" href="pages/contacts.html"
+                  >Contact&nbsp;Us</a
+                >
+              </div>
+            </div>
           </div>
         </div>
         <div class="footer__center">
