@@ -55,7 +55,6 @@ body {
           height: 100%;
           @include flex-horizontal();
           justify-content: flex-end;
-          //flex-wrap: wrap;
           .menu-item {
             display: none;
             margin: auto 0;
@@ -67,66 +66,19 @@ body {
           .menu-item:hover {
             color: $color-yellow;
           }
-          //   .menu-mini {
-          //     margin: auto 0;
-          //     margin-left: 20px;
-          //     @include flex-vertical();
-          //     position: relative;
-          //     display: inline-flex; // inline-block;
-          //     .button-mini {
-          //       //display: none;
-          //       display: block;
-          //       margin: auto 0;
-          //       width: auto;
-          //       height: 100%;
-          //       background: none;
-          //       //background-color: orange;
-          //       border: none;
-          //       cursor: pointer;
-          //       position: relative;
-          //     }
-          //     .menu-mini-box {
-          //       position: absolute;
-          //       top: $header-height * 0.45;
-          //       left: -5vw;
-          //       margin: auto 0;
-          //       width: auto;
-          //       height: fit-content;
-          //       @include flex-vertical();
-          //       justify-content: flex-end;
-          //       background-color: $color-primary-dark;
-          //       display: none;
-          //       .menu-item {
-          //         margin: auto 0;
-          //         margin-bottom: 20px;
-          //         padding: 0 20px 0 20px;
-          //         @include text-font(16px, 300, 16px, 0%);
-          //         text-decoration: none;
-          //         color: $color-white;
-          //       }
-          //       .menu-item:hover {
-          //         color: $color-yellow;
-          //       }
-          //     }
-          //   }
-          //   .menu-mini:hover .menu-mini-box {
-          //     display: flex;
-          //   }
         }
         .menu-mini {
           margin: auto 0;
           margin-left: 20px;
           @include flex-vertical();
           position: relative;
-          display: inline-flex; // inline-block;
+          display: inline-flex;
           .button-mini {
-            //display: none;
             display: block;
             margin: auto 0;
             width: auto;
             height: 100%;
             background: none;
-            //background-color: orange;
             border: none;
             cursor: pointer;
             position: relative;
@@ -138,7 +90,7 @@ body {
             float: right;
             margin: auto 0;
             padding-top: $header-height * 0.45;
-            width: auto; // 50vw; // auto;
+            width: auto;
             height: fit-content;
             @include flex-vertical();
             justify-content: flex-end;
@@ -185,7 +137,6 @@ body {
             background-color: $color-yellow;
           }
           .button-mini {
-            //display: none;
             display: block;
             margin: auto 0;
             width: auto;
@@ -193,8 +144,6 @@ body {
             background: none;
             border: none;
             outline: none;
-            //background-color: orange;
-            //border: 1px solid orange;
             cursor: pointer;
           }
         }

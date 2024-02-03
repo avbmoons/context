@@ -40,33 +40,35 @@ body {
       background-color: $color-white;
       .category-hero {
         margin: 0 auto;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 60px;
+        margin-bottom: 20px;
         width: $site-width;
-        height: $slide-height * 0.5;
+        height: auto;
         @include flex-vertical();
         background-color: $color-grey-superlight;
-        background-repeat: no-repeat;
-        background-size: cover;
         &__block {
           margin: 0 auto;
           width: 100%;
-          height: $slide-height;
+          height: 100%;
           @include flex-horizontal();
           .info-box {
             margin: auto;
-            width: 35%;
-            height: 55%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: $block-width;
+            height: auto;
             @include flex-vertical();
             justify-content: space-around;
             &__heading {
               margin: 0 auto;
+              margin-bottom: 20px;
               @include text-font(20px, 700, 20px, 0%);
               color: $color-primary;
               text-align: center;
             }
             &__text {
               margin: 0 auto;
+              margin-bottom: 20px;
               @include text-font(14px, 300, 18px, 0%);
               color: $color-primary;
               text-align: center;
@@ -95,14 +97,14 @@ body {
         margin: 0 auto;
         margin-bottom: 40px;
         width: $block-width;
-        min-height: $slide-height * 0.4;
+        height: auto;
         @include flex-vertical();
         justify-content: flex-start;
         &__block {
           margin: 0 auto;
           width: 100%;
-          min-height: inherit;
-          @include flex-horizontal();
+          height: auto;
+          @include flex-vertical();
           justify-content: space-between;
           .category-posts {
             margin: 0 auto;
@@ -114,27 +116,27 @@ body {
               margin: auto;
               margin-bottom: 20px;
               width: 100%;
-              height: $slide-height * 0.4;
-              @include flex-horizontal();
+              height: auto;
+              @include flex-vertical();
               justify-content: space-between;
               .post-image-box {
                 margin: auto;
-                width: auto;
-                height: 100%;
+                margin-bottom: 20px;
+                width: 100%;
+                height: auto;
                 img {
                   margin: auto;
-                  width: inherit;
-                  height: inherit;
+                  width: 100%;
+                  height: auto;
                 }
               }
               .post-content-box {
                 margin: 0 auto;
-                margin-left: 10px;
-                width: auto;
+                width: 100%;
                 @include flex-vertical();
                 justify-content: space-evenly;
                 .post-category {
-                  width: 90%;
+                  width: 100%;
                   @include flex-horizontal();
                   justify-content: flex-start;
                   display: none;
@@ -153,7 +155,8 @@ body {
                   }
                 }
                 .post-title {
-                  width: 90%;
+                  margin-bottom: 20px;
+                  width: 100%;
                   @include flex-horizontal();
                   justify-content: flex-start;
                   .title {
@@ -164,7 +167,8 @@ body {
                   }
                 }
                 .post-author {
-                  width: 90%;
+                  margin-bottom: 20px;
+                  width: 100%;
                   @include flex-horizontal();
                   justify-content: flex-start;
                   .author-label {
@@ -198,16 +202,18 @@ body {
                   }
                 }
                 .post-resume {
-                  width: 90%;
+                  margin-bottom: 20px;
+                  width: 100%;
                   @include flex-horizontal();
                   justify-content: flex-start;
                   .resume {
                     @include text-font(14px, 200, 20px, 0%);
-                    text-align: left;
+                    text-align: justify;
                     color: $color-primary-dark;
                   }
                 }
                 .post-button {
+                  margin-bottom: 20px;
                   @include flex-horizontal();
                   justify-content: flex-end;
                   display: none;
@@ -232,8 +238,8 @@ body {
           }
           .categories {
             margin: 0 auto;
-            width: 30%;
-            height: inherit;
+            width: $block-width;
+            height: auto;
             @include flex-vertical();
             justify-content: flex-start;
             &__block {
@@ -251,7 +257,7 @@ body {
                 justify-content: space-between;
                 .heading-text {
                   margin: 0;
-                  @include text-font(16px, 500, 16px, 0%);
+                  @include text-font(18px, 500, 18px, 0%);
                   color: $color-primary-dark;
                   text-align: left;
                 }

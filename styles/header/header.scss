@@ -77,7 +77,6 @@ body {
               width: auto;
               height: 100%;
               background: none;
-              //background-color: orange;
               border: none;
               cursor: pointer;
               position: relative;
@@ -115,16 +114,14 @@ body {
           margin-left: 20px;
           @include flex-vertical();
           position: relative;
-          display: inline-flex; // inline-block;
+          display: inline-flex;
           display: none;
           .button-mini {
-            //display: none;
             display: block;
             margin: auto 0;
             width: auto;
             height: 100%;
             background: none;
-            //background-color: orange;
             border: none;
             cursor: pointer;
             position: relative;
@@ -136,7 +133,7 @@ body {
             float: right;
             margin: auto 0;
             padding-top: $header-height * 0.45;
-            width: auto; // 50vw; // auto;
+            width: auto;
             height: fit-content;
             @include flex-vertical();
             justify-content: flex-end;
@@ -187,7 +184,6 @@ body {
             width: auto;
             height: 100%;
             background: none;
-            //background-color: orange;
             border: none;
             cursor: pointer;
           }

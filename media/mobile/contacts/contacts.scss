@@ -40,27 +40,27 @@ body {
       background-color: $color-white;
       .contacts-hero {
         margin: 0 auto;
-        margin-top: 40px;
+        margin-top: $header-height;
         margin-bottom: 40px;
         width: $site-width;
-        height: $slide-height * 0.5;
+        height: auto;
         @include flex-vertical();
         background-color: $color-grey-superlight;
-        background-repeat: no-repeat;
-        background-size: cover;
         &__block {
           margin: 0 auto;
           width: 100%;
-          height: $slide-height;
+          height: 100%;
           @include flex-horizontal();
           .info-box {
             margin: auto;
-            width: 55%;
-            height: 55%;
+            padding: 20px 0 20px 0;
+            width: $block-width;
+            height: auto;
             @include flex-vertical();
             justify-content: space-around;
             &__heading {
               margin: 0 auto;
+              margin-bottom: 20px;
               @include text-font(16px, 500, 16px, 0%);
               color: $color-primary;
               text-align: center;
@@ -68,12 +68,14 @@ body {
             }
             &__title {
               margin: 0 auto;
+              margin-bottom: 20px;
               @include text-font(24px, 700, 24px, 0%);
               color: $color-primary;
               text-align: center;
             }
             &__text {
               margin: 0 auto;
+              margin-bottom: 20px;
               @include text-font(14px, 300, 18px, 0%);
               color: $color-primary;
               text-align: center;
@@ -102,25 +104,28 @@ body {
       .contacts {
         margin: 0 auto;
         margin-bottom: 40px;
-        width: $site-width * 0.55;
-        height: $slide-height * 0.35;
+        padding: 20px;
+        width: $block-width;
+        height: auto;
         @include flex-vertical();
+        justify-content: space-between;
         background-color: $color-primary-light;
         &__block {
           margin: 0 auto;
           width: 100%;
           height: 100%;
-          @include flex-horizontal();
+          @include flex-vertical();
           .hours-box {
             margin: auto;
-            width: 40%;
-            height: 60%;
+            margin-bottom: 20px;
+            width: 100%;
+            height: auto;
             @include flex-vertical();
+            border-bottom: 1px solid $color-grey-light;
             &__heading-box {
               margin: 0;
               width: 100%;
-              height: 25%;
-              border-bottom: 1px solid $color-grey-light;
+              height: auto;
               &__heading {
                 @include text-font(14px, 300, 14px, 0%);
                 color: $color-grey-light;
@@ -130,18 +135,21 @@ body {
               margin: 0;
               margin-top: 20px;
               width: 100%;
-              height: 75%;
+              height: auto;
               @include flex-vertical();
               justify-content: space-between;
               &__dais {
+                margin-bottom: 10px;
                 @include text-font(16px, 500, 16px, 0%);
                 color: $color-white;
               }
               &__hours {
+                margin-bottom: 10px;
                 @include text-font(16px, 500, 16px, 0%);
                 color: $color-white;
               }
               &__comment {
+                margin-bottom: 20px;
                 @include text-font(14px, 300, 14px, 0%);
                 color: $color-grey-light;
               }
@@ -149,14 +157,13 @@ body {
           }
           .contact-box {
             margin: auto;
-            width: 40%;
-            height: 60%;
+            width: 100%;
+            height: auto;
             @include flex-vertical();
             &__heading-box {
               margin: 0;
               width: 100%;
-              height: 25%;
-              border-bottom: 1px solid $color-grey-light;
+              height: auto;
               &__heading {
                 @include text-font(14px, 300, 14px, 0%);
                 color: $color-grey-light;
@@ -166,10 +173,11 @@ body {
               margin: 0;
               margin-top: 20px;
               width: 100%;
-              height: 75%;
+              height: auto;
               @include flex-vertical();
               justify-content: space-between;
               &__phone {
+                margin-bottom: 10px;
                 @include text-font(16px, 500, 16px, 0%);
                 color: $color-white;
               }
@@ -188,8 +196,8 @@ body {
       .message {
         margin: 0 auto;
         margin-bottom: 40px;
-        width: $site-width * 0.55;
-        height: $slide-height * 0.7;
+        width: $block-width;
+        height: auto;
         @include flex-vertical();
         form {
           margin: 0 auto;
@@ -198,8 +206,9 @@ body {
           @include flex-vertical();
           justify-content: space-between;
           .send-input {
+            margin-bottom: 10px;
             width: 100%;
-            height: 15%;
+            height: $input-height;
             @include text-font(14px, 300, 14px, 0%);
             color: $color-primary;
             border: 1px solid$color-grey-light;
@@ -216,8 +225,9 @@ body {
             @include text-font(14px, 300, 14px, 0%);
           }
           .send-text {
+            margin-bottom: 10px;
             width: 100%;
-            height: 30%;
+            min-height: $input-height * 2;
             font-family: Sen;
             @include text-font(14px, 300, 14px, 0%);
             color: $color-primary;
@@ -230,8 +240,10 @@ body {
             font-family: Sen;
           }
           .send-button {
-            width: 100%;
-            height: 13%;
+            margin: auto;
+            margin-top: 20px;
+            width: 50%;
+            height: $input-height;
             background-color: $color-yellow;
             border: none;
             cursor: pointer;

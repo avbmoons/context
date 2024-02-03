@@ -30,7 +30,6 @@ body {
       @include header();
       position: fixed;
       top: 0;
-      //left: 0;
       z-index: 999;
     }
     main {
@@ -45,9 +44,8 @@ body {
         margin: 0 auto;
         margin-bottom: 40px;
         width: $site-width;
-        height: fit-content; // auto; // $slide-height;
+        height: fit-content;
         @include flex-vertical();
-        //background-image: url("../../assets/slides/slide-1.png");
         background-image: url("../../../assets/slides/slide-1.png");
         background-repeat: no-repeat;
         background-size: cover;
@@ -58,26 +56,24 @@ body {
           left: 0;
           margin: 0 auto;
           width: 100%;
-          height: 100%; // $slide-height;
+          height: 100%;
           @include flex-vertical();
           .post-box {
             margin: 0 auto;
             position: absolute;
-            top: auto; // 0;
+            top: auto;
             left: 0;
             z-index: 99;
             margin: 0 auto;
             margin-left: 5%;
-            width: 90%; // 55%;
-            height: auto; // 55%;
+            width: 90%;
+            height: auto;
             @include flex-vertical();
             justify-content: space-between;
-            //border: 1px solid red;
             .post-category {
               margin-bottom: 20px;
               @include flex-horizontal();
               justify-content: flex-start;
-              //display: block;
               .category-label {
                 @include text-font(14px, 200, 14px, 0%);
                 text-align: left;
@@ -94,7 +90,7 @@ body {
             }
             .post-title {
               margin-bottom: 20px;
-              width: 90%; // 95%;
+              width: 90%;
               @include flex-horizontal();
               justify-content: flex-start;
               .title {
@@ -139,12 +135,12 @@ body {
             .post-resume {
               margin-right: 10px;
               margin-bottom: 20px;
-              width: 95%; // 75%;
+              width: 95%;
               @include flex-horizontal();
               justify-content: flex-start;
               .resume {
                 @include text-font(14px, 200, 20px, 0%);
-                text-align: justify; // left;
+                text-align: justify;
                 color: $color-white;
               }
             }
@@ -171,7 +167,7 @@ body {
             top: 0;
             left: 0;
             width: 100%;
-            height: $slide-height; // 100%;
+            height: $slide-height;
             background-color: rgba($color: #000000, $alpha: 0.4);
           }
         }
@@ -180,38 +176,26 @@ body {
         margin: 0 auto;
         margin-bottom: 20px;
         width: $block-width;
-        //height: $featured-height;
-        //height: 90vh; // $slide-height;
-        //min-height: 90vh;
         height: auto;
         @include flex-vertical();
-        //border: 1px solid red;
         &__block {
           margin: 0 auto;
           width: 100%;
-          height: 100%; // inherit; // 100%;
-          //@include flex-horizontal();
+          height: 100%;
           @include flex-vertical();
-          //justify-content: space-between;
           .post-block {
             margin: 0 auto;
-            width: 100%; // 60%;
+            width: 100%;
             height: 100%;
             @include flex-vertical();
-            //border: 1px solid green;
             &__heading-box {
               margin: 0 auto;
-              //margin-bottom: 40px;
               width: 100%;
               height: 10%;
               @include flex-horizontal();
-              //justify-content: space-between;
-              //justify-content: flex-start;
-              //border: 1px solid orange;
               .heading-text {
-                margin: auto 0; // auto 0;
+                margin: auto 0;
                 padding: 20px 0 20px 0;
-                //width: 100%;
                 @include text-font(24px, 500, 24px, 0%);
                 color: $color-primary-dark;
                 text-align: center;
@@ -335,29 +319,25 @@ body {
           }
           .all-posts-block {
             margin: 0 auto;
-            width: 100%; // 40%;
-            height: 100%; // inherit; // 100%;
+            width: 100%;
+            height: 100%;
             @include flex-vertical();
-            //border: 1px solid green;
             &__heading-box {
               margin: 0 auto;
               margin-bottom: 20px;
-              width: 90%; // 100%;
-              height: fit-content; // 10%;
+              width: 90%;
+              height: fit-content;
               @include flex-horizontal();
               justify-content: space-between;
-              //border: 1px solid orange;
               .heading-text {
                 margin: auto 0;
                 padding: 20px 0 20px 0;
-                //width: 100%;
                 @include text-font(24px, 500, 24px, 0%);
                 color: $color-primary-dark;
               }
               .heading-link {
                 margin: auto 0;
                 padding: 20px 0 20px 0;
-                //width: 100%;
                 @include text-font(16px, 500, 16px, 0%);
                 text-decoration: none;
                 color: $color-primary-dark;
@@ -488,23 +468,20 @@ body {
       }
       .about {
         margin: 0 auto;
-        //margin-bottom: 20px;
-        width: $block-width; // $site-width;
-        height: auto; // $slide-height * 0.7;
+        width: $block-width;
+        height: auto;
         @include flex-vertical();
-        //border: 2px solid red;
         &__block {
           margin: 0 auto;
           width: 100%;
-          height: auto; // 100%; // $slide-height;
+          height: auto;
           @include flex-vertical();
           .decor-box {
-            margin: 0; // 0 auto;
+            margin: 0;
             width: 100%;
-            height: 20px; // 5%;
+            height: 20px;
             @include flex-horizontal();
             justify-content: space-between;
-            //background-color: orange;
             .decor-item {
               margin: 0 auto;
               height: 100%;
@@ -524,24 +501,20 @@ body {
           }
           .content-box {
             margin: 0 auto;
-            //margin-bottom: 20px;
             padding-left: 20px;
             width: 100%;
-            height: fit-content; // 95%;
-            //@include flex-horizontal();
+            height: fit-content;
             @include flex-vertical();
             justify-content: space-between;
             background-color: $color-primary-superlight;
             .about-us {
               margin: 0 auto;
               padding-top: 20px;
-              width: 100%; // 40%;
-              height: 50%; // 55%;
+              width: 100%;
+              height: 50%;
               @include flex-vertical();
               justify-content: space-between;
-              //border: 1px solid green;
               .post-category {
-                //margin: 0 auto;
                 margin-bottom: 20px;
                 width: 90%;
                 @include flex-horizontal();
@@ -563,9 +536,8 @@ body {
                 }
               }
               .post-title {
-                //margin: 0 auto;
                 margin-bottom: 20px;
-                width: 90%; //100%;
+                width: 90%;
                 @include flex-horizontal();
                 justify-content: flex-start;
                 .title {
@@ -576,8 +548,6 @@ body {
                 }
               }
               .post-resume {
-                //margin: 0 auto;
-                //margin-right: 10px;
                 margin-bottom: 20px;
                 width: 90%;
                 @include flex-horizontal();
@@ -595,8 +565,6 @@ body {
                 justify-content: flex-start;
                 display: block;
                 .to-post {
-                  //padding: $button-padding;
-                  //background-color: $color-yellow;
                   @include text-font(14px, 700, 14px, 0%);
                   color: $color-primary-light;
                   border: none;
@@ -614,13 +582,11 @@ body {
             .our-mission {
               margin: 0 auto;
               padding-top: 20px;
-              width: 100%; // 40%;
-              height: 50%; // 55%;
+              width: 100%;
+              height: 50%;
               @include flex-vertical();
               justify-content: space-between;
-              //border: 1px solid green;
               .post-category {
-                //margin: 0 auto;
                 margin-bottom: 20px;
                 width: 90%;
                 @include flex-horizontal();
@@ -634,7 +600,6 @@ body {
                   display: none;
                 }
                 .category {
-                  //margin-left: 10px;
                   @include text-font(14px, 700, 14px, 0%);
                   text-align: left;
                   color: $color-primary;
@@ -642,9 +607,8 @@ body {
                 }
               }
               .post-title {
-                //margin: 0 auto;
                 margin-bottom: 20px;
-                width: 90%; //100%;
+                width: 90%;
                 @include flex-horizontal();
                 justify-content: flex-start;
                 .title {
@@ -655,8 +619,6 @@ body {
                 }
               }
               .post-resume {
-                //margin: 0 auto;
-                //margin-right: 10px;
                 margin-bottom: 20px;
                 width: 90%;
                 @include flex-horizontal();
@@ -674,8 +636,6 @@ body {
                 justify-content: flex-start;
                 display: none;
                 .to-post {
-                  //padding: $button-padding;
-                  //background-color: $color-yellow;
                   @include text-font(14px, 700, 14px, 0%);
                   color: $color-primary-light;
                   border: none;
@@ -695,15 +655,13 @@ body {
       }
       .categories {
         margin: 0 auto;
-        //margin-bottom: 20px;
-        width: $block-width; // $site-width;
-        height: auto; // $slide-height * 0.55; // * 0.45;
+        width: $block-width;
+        height: auto;
         @include flex-vertical();
-        //border: 2px solid red;
         &__block {
           margin: 0 auto;
           width: 100%;
-          height: 100%; // $slide-height;
+          height: 100%;
           @include flex-vertical();
           &__heading-box {
             margin: 0 auto;
@@ -711,17 +669,14 @@ body {
             height: 30%;
             @include flex-horizontal();
             justify-content: space-between;
-            //border: 1px solid orange;
             .heading-text {
               margin: auto;
               padding: 20px 0 20px 0;
-              //width: 100%;
               @include text-font(24px, 500, 24px, 0%);
               color: $color-primary-dark;
             }
             .heading-link {
               margin: 0 auto;
-              //width: 100%;
               @include text-font(16px, 500, 16px, 0%);
               text-decoration: none;
               color: $color-primary-dark;
@@ -735,11 +690,10 @@ body {
             @include flex-horizontal();
             justify-content: space-between;
             flex-wrap: wrap;
-            //border: 1px solid green;
             .category-item {
               margin: 0 auto;
               margin-top: 20px;
-              width: 47%; // 23%;
+              width: 47%;
               height: 100%;
               @include flex-vertical();
               justify-content: space-around;
@@ -751,14 +705,12 @@ body {
                 width: 90%;
                 @include flex-horizontal();
                 justify-content: flex-start;
-                //border: 1px solid green;
                 img {
                   margin: 0;
                   height: 100%;
                   width: auto;
                   background-color: $color-white;
                   border-radius: 3px;
-                  //border: 1px solid green;
                 }
               }
               .category-title {
@@ -768,7 +720,6 @@ body {
                 @include flex-horizontal();
                 justify-content: flex-start;
                 cursor: pointer;
-                //border: 1px solid green;
                 &__link {
                   @include text-font(18px, 700, 18px, 0%);
                   text-decoration: none;
@@ -802,14 +753,13 @@ body {
       .authors {
         margin: 0 auto;
         margin-bottom: 40px;
-        width: $block-width; // $site-width;
-        height: auto; // $slide-height * 0.55; // * 0.6;
+        width: $block-width;
+        height: auto;
         @include flex-vertical();
-        //border: 2px solid red;
         &__block {
           margin: 0 auto;
           width: 100%;
-          height: 100%; // $slide-height;
+          height: 100%;
           @include flex-vertical();
           &__heading-box {
             margin: 0 auto;
@@ -817,17 +767,14 @@ body {
             height: 20%;
             @include flex-horizontal();
             justify-content: space-between;
-            //border: 1px solid orange;
             .heading-text {
               margin: 0 auto;
               padding: 20px 0 20px 0;
-              //width: 100%;
               @include text-font(24px, 500, 24px, 0%);
               color: $color-primary-dark;
             }
             .heading-link {
               margin: 0 auto;
-              //width: 100%;
               @include text-font(16px, 500, 16px, 0%);
               text-decoration: none;
               color: $color-primary-dark;
@@ -837,16 +784,15 @@ body {
           &__content-box {
             margin: 0 auto;
             width: 100%;
-            height: fit-content; // 80%;
+            height: fit-content;
             @include flex-horizontal();
             justify-content: space-between;
             flex-wrap: wrap;
-            //border: 1px solid green;
             .author-item {
               margin: 0 auto;
               margin-bottom: 20px;
-              width: 47%; //23%;
-              height: auto; // 100%;
+              width: 47%;
+              height: auto;
               @include flex-vertical();
               justify-content: space-around;
               background-color: $color-grey-superlight;
@@ -855,25 +801,21 @@ body {
                 margin: 0 auto;
                 margin-bottom: 20px;
                 padding-top: 20px;
-                height: auto; // 16vh; // auto; // 128px;
-                width: 40%; // auto; // 90%; // auto;
+                height: auto;
+                width: 40%;
                 @include flex-vertical();
-                //width: 100%;
-                //border: 1px solid green;
                 img {
                   margin: auto;
-                  height: auto; // 100%; // auto; // 100%;
-                  width: 100%; // auto; //  100%; // auto;
+                  height: auto;
+                  width: 100%;
                   background-color: $color-grey-superlight;
                   border-radius: 3px;
-                  //border: 1px solid green;
                 }
               }
               .author-title {
                 margin: 0 auto;
                 margin-bottom: 20px;
-                width: fit-content; // 100%;
-                //border: 1px solid green;
+                width: fit-content;
                 &__link {
                   @include text-font(18px, 700, 18px, 0%);
                   text-decoration: none;
@@ -888,11 +830,10 @@ body {
               .author-resume {
                 margin: 0 auto;
                 margin-bottom: 20px;
-                width: fit-content; // 100%;
-                //border: 1px solid green;
+                width: fit-content;
                 &__text {
                   @include text-font(14px, 300, 18px, 0%);
-                  text-align: center; // left;
+                  text-align: center;
                   color: $color-primary-dark;
                 }
               }
@@ -903,7 +844,7 @@ body {
                 @include flex-horizontal();
                 justify-content: space-between;
                 a {
-                  margin-right: 1vh; // 10px;
+                  margin-right: 1vh;
                   img {
                     height: 2vh;
                   }
@@ -923,32 +864,25 @@ body {
         margin: 0 auto;
         margin-bottom: 40px;
         width: $block-width;
-        height: auto; // $slide-height * 0.6;
+        height: auto;
         @include flex-vertical();
-        //background-color: $color-yellow-superlight;
         background: none;
-        //border: 2px solid red;
         &__block {
           margin: 0 auto;
-          width: 100%; // 90%; // 100%;
-          height: fit-content; // 100%; // $slide-height;
-          //@include flex-horizontal();
+          width: 100%;
+          height: fit-content;
           @include flex-vertical();
-          //border: 1px solid red;
           .feedbacks-info {
             margin: auto;
             margin-bottom: 20px;
             padding-left: 20px;
-            width: 100%; // 90%; // 35%;
-            height: fit-content; // auto; // 90%;
+            width: 100%;
+            height: fit-content;
             @include flex-vertical();
             justify-content: space-around;
-            //border: 1px solid green;
             border: none;
-            //border-bottom: 2px solid $color-grey-light;
             background-color: $color-yellow-superlight;
             .post-category {
-              //margin: 0 auto;
               margin-bottom: 20px;
               padding-top: 20px;
               width: 90%;
@@ -963,7 +897,6 @@ body {
                 display: none;
               }
               .category {
-                //margin-left: 10px;
                 @include text-font(14px, 700, 14px, 0%);
                 text-align: left;
                 color: $color-primary;
@@ -971,9 +904,8 @@ body {
               }
             }
             .post-title {
-              //margin: 0 auto;
               margin-bottom: 20px;
-              width: 90%; //100%;
+              width: 90%;
               @include flex-horizontal();
               justify-content: flex-start;
               .title {
@@ -984,8 +916,6 @@ body {
               }
             }
             .post-resume {
-              //margin: 0 auto;
-              //margin-right: 10px;
               margin-bottom: 20px;
               width: 90%;
               @include flex-horizontal();
@@ -1003,8 +933,6 @@ body {
               justify-content: flex-start;
               display: none;
               .to-post {
-                //padding: $button-padding;
-                //background-color: $color-yellow;
                 @include text-font(14px, 700, 14px, 0%);
                 color: $color-primary-light;
                 border: none;
@@ -1019,14 +947,12 @@ body {
           .feedbacks-item {
             margin: auto;
             padding-left: 20px;
-            width: 100%; // 90%; // 60%;
-            height: fit-content; // auto; // 90%;
+            width: 100%;
+            height: fit-content;
             @include flex-vertical();
             justify-content: space-around;
             background-color: $color-yellow-superlight;
-            //border: 1px solid blue;
             .post-category {
-              //margin: 0 auto;
               margin-bottom: 20px;
               width: 90%;
               @include flex-horizontal();
@@ -1040,7 +966,6 @@ body {
                 display: none;
               }
               .category {
-                //margin-left: 10px;
                 @include text-font(14px, 700, 14px, 0%);
                 text-align: left;
                 color: $color-primary;
@@ -1048,9 +973,8 @@ body {
               }
             }
             .post-title {
-              //margin: 0 auto;
               margin-bottom: 20px;
-              width: 90%; //100%;
+              width: 90%;
               @include flex-horizontal();
               justify-content: flex-start;
               display: none;
@@ -1062,14 +986,11 @@ body {
               }
             }
             .post-resume {
-              //margin: 0 auto;
-              //margin-right: 10px;
               margin-top: 20px;
               margin-bottom: 20px;
               width: 80%;
               @include flex-horizontal();
               justify-content: flex-start;
-              //display: block;
               .resume {
                 @include text-font(14px, 200, 20px, 0%);
                 text-align: left;
@@ -1078,33 +999,28 @@ body {
             }
             .feedbacks-summary {
               width: 100%;
-              height: auto; // 7vh; // 60px; // 20%;
-              //@include flex-horizontal();
+              height: auto;
               @include flex-vertical();
-              justify-content: space-between; // flex-start;
-              //border: 1px solid blue;
+              justify-content: space-between;
               .user-box {
                 margin-bottom: 20px;
-                width: 90%; // 50%;
-                height: auto; // 100%;
+                width: 90%;
+                height: auto;
                 @include flex-horizontal();
                 justify-content: space-around;
-                //border: 1px solid green;
                 .user-image {
                   margin: 0 auto;
                   width: auto;
-                  height: fit-content; // 60px; // 100%;
-                  //border: 1px solid green;
+                  height: fit-content;
                   img {
-                    height: 60px; // 100%;
+                    height: 60px;
                   }
                 }
                 .user-info {
                   margin: 0 auto;
                   width: fit-content;
-                  height: 60px; // 100%;
+                  height: 60px;
                   @include flex-vertical();
-                  //border: 1px solid green;
                   .user-name {
                     @include text-font(16px, 600, 16px, 0%);
                   }
@@ -1115,12 +1031,11 @@ body {
               }
               .paginator {
                 margin-bottom: 20px;
-                width: 90%; // 50%;
-                height: auto; // 100%;
+                width: 90%;
+                height: auto;
                 @include flex-horizontal();
-                //border: 1px solid violet;
                 .page-button {
-                  height: 40px; // 100%;
+                  height: 40px;
                   width: 40px;
                   @include text-font(28px, 500, 28px, 0%);
                   border: none;
@@ -1150,16 +1065,14 @@ body {
         margin: 0 auto;
         margin-bottom: 40px;
         width: $block-width;
-        height: auto; // $slide-height * 0.5;
+        height: auto;
         @include flex-vertical();
-        //border: 2px solid red;
         &__block {
           margin: 0 auto;
-          width: 90%; // 40%; // 100%;
-          height: fit-content; // 90%; // $slide-height;
+          width: 90%;
+          height: fit-content;
           @include flex-vertical();
           justify-content: space-around;
-          //border: 2px solid red;
           &__heading {
             margin: 0 auto;
             margin-bottom: 20px;
@@ -1177,7 +1090,7 @@ body {
           &__button {
             margin: 0 auto;
             .join-button {
-              width: auto; // 40%;
+              width: auto;
               padding: $button-padding;
               @include text-font(16px, 300, 24px, 0%);
               color: $color-primary;
@@ -1188,7 +1101,6 @@ body {
             }
             .join-button:hover {
               background-color: $color-yellow-light;
-              //color: $color-white;
             }
           }
         }

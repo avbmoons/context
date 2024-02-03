@@ -43,11 +43,9 @@ body {
         margin-top: 60px;
         margin-bottom: 40px;
         width: $site-width;
-        //height: $featured-height;
-        height: $slide-height * 0.7; // 90vh; // $slide-height;
+        height: $slide-height * 0.7;
         @include flex-vertical();
         background-color: $color-yellow-superlight;
-        //border: 1px solid red;
         &__block {
           margin: 0 auto;
           width: 100%;
@@ -56,22 +54,19 @@ body {
           justify-content: space-between;
           .post-box {
             margin: auto;
-            width: $site-width; // $block-width; // 90%;
+            width: $site-width;
             height: 80%;
             @include flex-horizontal();
             justify-content: space-between;
-            //border: 1px solid green;
             .post-content {
               margin: 0 auto;
               width: 45%;
               height: 100%;
               @include flex-vertical();
               justify-content: space-evenly;
-              //border: 1px solid orange;
               .post-type {
                 @include flex-horizontal();
                 justify-content: flex-start;
-                //display: block;
                 .type-label {
                   @include text-font(14px, 500, 14px, 0%);
                   text-align: left;
@@ -144,7 +139,6 @@ body {
               .post-button {
                 @include flex-horizontal();
                 justify-content: flex-start;
-                //width: 35%;
                 .to-post {
                   padding: $button-padding;
                   background-color: $color-yellow;
@@ -161,14 +155,13 @@ body {
             }
             .post-image {
               margin: auto;
-              width: auto; // 45%;
-              height: 100%; // auto;
+              width: auto;
+              height: 100%;
               @include flex-horizontal();
               align-items: center;
-              //border: 1px solid green;
               img {
-                width: auto; // 100%;
-                height: 100%; // auto;
+                width: auto;
+                height: 100%;
               }
             }
           }
@@ -177,11 +170,9 @@ body {
       .all-posts {
         margin: 0 auto;
         margin-bottom: 40px;
-        width: $block-width; // 40%;
-        //height: 100%;
+        width: $block-width;
         min-height: $slide-height * 0.5;
         @include flex-vertical();
-        //border: 1px solid green;
         &__heading-box {
           margin: 0 auto;
           margin-bottom: 40px;
@@ -191,16 +182,13 @@ body {
           @include flex-horizontal();
           justify-content: space-between;
           border-bottom: 2px solid $color-grey-light;
-          //border: 1px solid orange;
           .heading-text {
             margin: auto 0;
-            //width: 100%;
             @include text-font(24px, 500, 24px, 0%);
             color: $color-primary-dark;
           }
           .heading-link {
             margin: auto 0;
-            //width: 100%;
             @include text-font(16px, 500, 16px, 0%);
             text-decoration: none;
             color: $color-primary-dark;
@@ -212,25 +200,22 @@ body {
           width: 100%;
           height: 90%;
           @include flex-vertical();
-          justify-content: flex-start; // space-between;
-          //border: 2px solid violet;
+          justify-content: flex-start;
           .post-box {
             margin: auto;
             margin-bottom: 40px;
-            width: 100%; // 90%;
-            height: $slide-height * 0.45; // 25%; // 90%;
+            width: 100%;
+            height: $slide-height * 0.45;
             @include flex-horizontal();
             justify-content: space-between;
-            //border: 1px solid green;
             .post-image-box {
               margin: auto;
-              width: auto; // 40%;
-              height: 100%; // auto;
-              //display: block;
+              width: auto;
+              height: 100%;
               img {
                 margin: auto;
-                width: auto; // 100%;
-                height: 100%; // auto;
+                width: auto;
+                height: 100%;
               }
             }
             .post-content-box {
@@ -238,13 +223,10 @@ body {
               width: 50%;
               @include flex-vertical();
               justify-content: space-evenly;
-              //border: 1px solid green;
               .post-category {
                 width: 90%;
                 @include flex-horizontal();
                 justify-content: flex-start;
-                //display: none;
-                //border: 1px solid green;
                 .category-label {
                   @include text-font(14px, 200, 14px, 0%);
                   text-align: left;
@@ -253,7 +235,6 @@ body {
                   display: none;
                 }
                 .category {
-                  //margin-left: 10px;
                   @include text-font(14px, 700, 14px, 0%);
                   text-align: left;
                   color: $color-primary;
@@ -261,11 +242,9 @@ body {
                 }
               }
               .post-title {
-                //margin: 0 auto;
-                width: 90%; //100%;
+                width: 90%;
                 @include flex-horizontal();
                 justify-content: flex-start;
-                //border: 1px solid green;
                 .title {
                   @include text-font(16px, 500, 16px, 0%);
                   text-decoration: none;
@@ -274,7 +253,6 @@ body {
                 }
               }
               .post-author {
-                //margin: 0 auto;
                 width: 90%;
                 @include flex-horizontal();
                 justify-content: flex-start;
@@ -309,11 +287,9 @@ body {
                 }
               }
               .post-resume {
-                //margin-right: 10px;
                 width: 90%;
                 @include flex-horizontal();
                 justify-content: flex-start;
-                //display: none;
                 .resume {
                   @include text-font(14px, 200, 20px, 0%);
                   text-align: left;
@@ -348,7 +324,6 @@ body {
           width: 100%;
           height: 60px;
           @include flex-horizontal();
-          //border: 1px solid violet;
           .page-button {
             height: 100%;
             width: 60px;
@@ -359,7 +334,7 @@ body {
             cursor: pointer;
           }
           .previous {
-            background-color: $color-white; // $color-yellow-superlight;
+            background-color: $color-white;
             color: $color-primary;
           }
           .next {
@@ -371,14 +346,13 @@ body {
       .categories {
         margin: 0 auto;
         margin-bottom: 40px;
-        width: $block-width; // $site-width;
+        width: $block-width;
         height: $slide-height * 0.45;
         @include flex-vertical();
-        //border: 2px solid red;
         &__block {
           margin: 0 auto;
           width: 100%;
-          height: 100%; // $slide-height;
+          height: 100%;
           @include flex-vertical();
           &__heading-box {
             margin: 0 auto;
@@ -386,17 +360,14 @@ body {
             height: 30%;
             @include flex-horizontal();
             justify-content: space-between;
-            //border: 1px solid orange;
             .heading-text {
-              margin: 0; // auto;
-              //width: 100%;
+              margin: 0;
               @include text-font(24px, 500, 24px, 0%);
               color: $color-primary-dark;
               text-align: left;
             }
             .heading-link {
               margin: 0 auto;
-              //width: 100%;
               @include text-font(16px, 500, 16px, 0%);
               text-decoration: none;
               color: $color-primary-dark;
@@ -409,7 +380,6 @@ body {
             height: 70%;
             @include flex-horizontal();
             justify-content: space-between;
-            //border: 1px solid green;
             .category-item {
               margin: 0 auto;
               width: 23%;
@@ -422,13 +392,11 @@ body {
                 height: 48px;
                 width: auto;
                 width: 90%;
-                //border: 1px solid green;
                 img {
                   height: 100%;
                   width: auto;
                   background-color: $color-white;
                   border-radius: 3px;
-                  //border: 1px solid green;
                 }
               }
               .category-title {
@@ -439,7 +407,6 @@ body {
                 color: $color-primary-dark;
                 text-align: left;
                 cursor: pointer;
-                //border: 1px solid green;
               }
               .category-title:hover {
                 color: $color-primary-light;
@@ -450,7 +417,6 @@ body {
                 @include text-font(14px, 300, 18px, 0%);
                 text-align: left;
                 color: $color-primary-dark;
-                //border: 1px solid green;
               }
             }
             .category-item:hover {
@@ -465,14 +431,12 @@ body {
         width: $block-width;
         height: $slide-height * 0.5;
         @include flex-vertical();
-        //border: 2px solid red;
         &__block {
           margin: 0 auto;
-          width: 40%; // 100%;
-          height: 90%; // $slide-height;
+          width: 40%;
+          height: 90%;
           @include flex-vertical();
           justify-content: space-around;
-          //border: 2px solid red;
           &__heading {
             margin: 0 auto;
             @include text-font(24px, 500, 30px, 0%);
@@ -488,7 +452,7 @@ body {
           &__button {
             margin: 0 auto;
             .join-button {
-              width: auto; // 40%;
+              width: auto;
               padding: $button-padding;
               @include text-font(16px, 300, 24px, 0%);
               color: $color-primary;
@@ -499,7 +463,6 @@ body {
             }
             .join-button:hover {
               background-color: $color-yellow-light;
-              //color: $color-white;
             }
           }
         }

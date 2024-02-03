@@ -40,27 +40,27 @@ body {
       background-color: $color-white;
       .privacy-hero {
         margin: 0 auto;
-        margin-top: 40px;
+        margin-top: $header-height;
         margin-bottom: 40px;
         width: $site-width;
-        height: $slide-height * 0.35;
+        height: auto;
         @include flex-vertical();
         background-color: $color-grey-superlight;
-        background-repeat: no-repeat;
-        background-size: cover;
         &__block {
           margin: 0 auto;
-          width: 100%;
-          height: $slide-height;
+          width: $block-width;
+          height: auto;
           @include flex-horizontal();
           .info-box {
             margin: auto;
-            width: 55%;
-            height: 55%;
+            padding: 20px 0 20px 0;
+            width: 100%;
+            height: auto;
             @include flex-vertical();
             justify-content: space-around;
             &__heading {
               margin: 0 auto;
+              margin-bottom: 20px;
               @include text-font(16px, 500, 16px, 0%);
               color: $color-primary;
               text-align: center;
@@ -69,6 +69,7 @@ body {
             }
             &__title {
               margin: 0 auto;
+              margin-bottom: 20px;
               @include text-font(24px, 700, 24px, 0%);
               color: $color-primary;
               text-align: center;
@@ -103,8 +104,8 @@ body {
       .privacy {
         margin: 0 auto;
         margin-bottom: 40px;
-        width: $site-width * 0.55;
-        min-height: $slide-height * 0.35;
+        width: $block-width;
+        height: auto;
         @include flex-vertical();
         &__heading {
           margin-bottom: 20px;
@@ -119,7 +120,7 @@ body {
           margin-bottom: 20px;
           @include text-font(14px, 300, 18px, 0%);
           color: $color-primary;
-          text-align: left;
+          text-align: justify;
         }
       }
     }

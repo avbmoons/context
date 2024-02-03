@@ -413,10 +413,9 @@ body {
       .we-started {
         margin: 0 auto;
         margin-bottom: 40px;
-        width: $block-width; // $site-width;
+        width: $block-width;
         height: $slide-height * 0.65;
         @include flex-vertical();
-        //border: 2px solid red;
         .content-box {
           margin: 0 auto;
           width: 100%;
@@ -426,19 +425,17 @@ body {
           background-color: $color-primary-superlight;
           .content-image {
             margin: 0 auto;
-            width: 45%; // 40%;
-            height: auto; // 65%;
+            width: 45%;
+            height: auto;
             @include flex-vertical();
           }
           .we-started-box {
             margin: auto;
-            width: 45%; // 40%;
+            width: 45%;
             height: 75%;
             @include flex-vertical();
             justify-content: space-between;
-            //border: 1px solid green;
             .post-category {
-              //margin: 0 auto;
               width: 90%;
               @include flex-horizontal();
               justify-content: flex-start;
@@ -451,16 +448,13 @@ body {
                 display: none;
               }
               .category {
-                //margin-left: 10px;
                 @include text-font(18px, 700, 18px, 0%);
                 text-align: left;
                 color: $color-primary;
-                //text-transform: uppercase;
               }
             }
             .post-title {
-              //margin: 0 auto;
-              width: 90%; //100%;
+              width: 90%;
               @include flex-horizontal();
               justify-content: flex-start;
               .title {
@@ -471,8 +465,6 @@ body {
               }
             }
             .post-resume {
-              //margin: 0 auto;
-              //margin-right: 10px;
               width: 90%;
               @include flex-horizontal();
               justify-content: flex-start;
@@ -488,8 +480,6 @@ body {
               justify-content: flex-start;
               display: none;
               .to-post {
-                //padding: $button-padding;
-                //background-color: $color-yellow;
                 @include text-font(14px, 700, 14px, 0%);
                 color: $color-primary-light;
                 border: none;
@@ -506,14 +496,13 @@ body {
       .authors {
         margin: 0 auto;
         margin-bottom: 40px;
-        width: $block-width; // $site-width;
+        width: $block-width;
         min-height: $slide-height * 0.6;
         @include flex-vertical();
-        //border: 2px solid red;
         &__block {
           margin: 0 auto;
           width: 100%;
-          height: 100%; // $slide-height;
+          height: 100%;
           @include flex-vertical();
           &__heading-box {
             margin: 0 auto;
@@ -522,16 +511,13 @@ body {
             height: 20%;
             @include flex-horizontal();
             justify-content: space-between;
-            //border: 1px solid orange;
             .heading-text {
               margin: 0 auto;
-              //width: 100%;
               @include text-font(24px, 500, 24px, 0%);
               color: $color-primary-dark;
             }
             .heading-link {
               margin: 0 auto;
-              //width: 100%;
               @include text-font(16px, 500, 16px, 0%);
               text-decoration: none;
               color: $color-primary-dark;
@@ -541,16 +527,15 @@ body {
           &__content-box {
             margin: 0 auto;
             width: 100%;
-            height: auto; // 80%;
+            height: auto;
             @include flex-horizontal();
             justify-content: space-between;
             flex-wrap: wrap;
-            //border: 1px solid green;
             .author-item {
               margin: 0 auto;
               margin-bottom: 20px;
               width: 23%;
-              height: $slide-height * 0.45; // 100%;
+              height: $slide-height * 0.45;
               @include flex-vertical();
               justify-content: space-around;
               background-color: $color-grey-superlight;
@@ -559,36 +544,31 @@ body {
                 margin: 0 auto;
                 height: 128px;
                 width: auto;
-                //width: 100%;
-                //border: 1px solid green;
                 img {
                   height: 100%;
                   width: auto;
                   background-color: $color-grey-superlight;
                   border-radius: 3px;
-                  //border: 1px solid green;
                 }
               }
               .author-title {
                 margin: 0 auto;
-                width: fit-content; // 100%;
+                width: fit-content;
                 @include text-font(18px, 700, 18px, 0%);
                 text-decoration: none;
                 color: $color-primary-dark;
                 text-align: left;
                 cursor: pointer;
-                //border: 1px solid green;
               }
               .author-title:hover {
                 color: $color-primary-light;
               }
               .author-resume {
                 margin: 0 auto;
-                width: fit-content; // 100%;
+                width: fit-content;
                 @include text-font(14px, 300, 18px, 0%);
                 text-align: left;
                 color: $color-primary-dark;
-                //border: 1px solid green;
               }
               .author-socials {
                 margin: 0 auto;
@@ -614,14 +594,12 @@ body {
         width: $block-width;
         height: $slide-height * 0.5;
         @include flex-vertical();
-        //border: 2px solid red;
         &__block {
           margin: 0 auto;
-          width: 40%; // 100%;
-          height: 90%; // $slide-height;
+          width: 40%;
+          height: 90%;
           @include flex-vertical();
           justify-content: space-around;
-          //border: 2px solid red;
           &__heading {
             margin: 0 auto;
             @include text-font(24px, 500, 30px, 0%);
@@ -637,7 +615,7 @@ body {
           &__button {
             margin: 0 auto;
             .join-button {
-              width: auto; // 40%;
+              width: auto;
               padding: $button-padding;
               @include text-font(16px, 300, 24px, 0%);
               color: $color-primary;
@@ -648,7 +626,6 @@ body {
             }
             .join-button:hover {
               background-color: $color-yellow-light;
-              //color: $color-white;
             }
           }
         }

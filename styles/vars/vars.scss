@@ -3,7 +3,7 @@
 $site-width: 100%;
 $site-height: 100vh;
 $site-maket-width: 1440px;
-//$site-maket-height: ;
+
 $header-width: 100%;
 $header-height: 10vh; // 80px;
 
@@ -18,42 +18,19 @@ $block-width: math.div($block-maket-width, $site-maket-width) * $site-width;
 
 $coeff: math.div($block-width, $block-maket-width);
 
-$featured-width: $block-width; // $block-maket-width;
-//$featured-height: 804px;
+$featured-width: $block-width;
 
-$about-width: $block-width; // $block-maket-width;
-//$about-height: 523px;
+$about-width: $block-width;
 
-//$category-plate-width: 296px;
-//$category-plate-height: 228px;
+$special-post-width: $block-width;
 
-$special-post-width: $block-width; // $block-maket-width;
-//$special-post-height: 705px;
+$logo-component-width: $block-width;
 
-//$author-plate-width: 296px;
-//$author-plate-height: 324px;
-
-$logo-component-width: $block-width; // $block-maket-width;
-//$logo-component-height: 52px;
-
-$feedback-width: $block-width; // $block-maket-width;
-//$feedback-height: 464px;
-
-//$join-width: 414px;
-//$join-height: 256px;
+$feedback-width: $block-width;
 
 $button-padding: 16px 48px 16px 48px;
-//$button-height: 56px;
 
 $input-height: 7vh;
-
-// $coeff-h: math.div(90, 720);
-
-// $font10: $coeff-h * 10 * 1vh;
-// $font12: $coeff-h * 12 * 1vh;
-// $font14: $coeff-h * 14 * 1vh;
-// $font16: $coeff-h * 16 * 1vh;
-// $font18: $coeff-h * 18 * 1vh;
 
 $color-primary: #292b3d; //rgb(41,43,61);
 $color-primary-dark: #232536; //rgb(35,37,54);
