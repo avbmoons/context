@@ -850,7 +850,6 @@ body {
   justify-content: center;
   box-sizing: border-box;
   justify-content: flex-start;
-  display: block;
 }
 .wrapper .top main .hero__block .post-box .post-category .category-label {
   font-size: 14px;

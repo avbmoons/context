@@ -72,7 +72,7 @@ body {
             .post-category {
               @include flex-horizontal();
               justify-content: flex-start;
-              display: block;
+              //display: block;
               .category-label {
                 @include text-font(14px, 200, 14px, 0%);
                 text-align: left;
